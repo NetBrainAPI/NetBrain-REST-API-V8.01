@@ -32,8 +32,15 @@ The only way to clear a field is delete a user and add this user back with new v
 |email* | string  | The email address of the user. This parameter is required. |
 |firstName* | string  | The first name of the user. This parameter is required.  |
 |lastName* | string  | The last name of the user. This parameter is required. |
+|**Name**|**Type**|**Description**|
+|------|------|------|
+|<img width=100/>|<img width=100/>|<img width=500/>|
+|username* | string  | The user name. This parameter is required.  |
+|email* | string  | The email address of the user. This parameter is required. |
+|firstName* | string  | The first name of the user. This parameter is required.  |
+|lastName* | string  | The last name of the user. This parameter is required. |
 |password* | string  | The login password. The allowed length is 6-128 characters by default. This parameter is required.  |
-|authenticationType | integer |The authentication type for the user account.<br>▪ 1 - Local<br>▪ 2 - External|
+|authenticationServer | string |The name of the authentication server for create an external account.|
 |phoneNumber | string |The phone number of the user.|
 |department | string |The department that the user belongs to.|
 |description | string |Any description about the account.|
@@ -47,19 +54,25 @@ The only way to clear a field is delete a user and add this user back with new v
 
 ```python
 {
-      "username": "NetBrain",
-      "email": "NetBrain@netbrain.com",
-      "firstName": "NetBrain",
-      "lastName": "NetBrain",
-      "password": "NetBrain",
-      "authenticationType": 1 or 2,
-      "phoneNumber": "string",
-      "department": "string",
-      "description": "string",
-      "allowChangePassword": True or False,
-      "deactivatedTime": "string",
-      "isSystemAdmin": True or False,
-      "tenants": [tenants objects ...]
+        "username": "user1",
+        "authenticationServer":"Tacacs",
+        "email": "user1@sso.com",
+        "firstName": "user1",
+        "lastName": "user1",
+        "phoneNumber" : "",
+        "department" : "",
+        "description" : "",
+        "deactivatedTime" : "",
+        "isSystemAdmin":"true",
+        "tenants" : [{
+            "tenantName":"tenant_71a1",
+            "isTenantAdmin":false,
+            "allowCreateDomain":"false",
+            "domains":[{
+                "domainName":"domain_cyj",
+                "domainRoles":["domainAdmin"]
+            }]
+        }]
 }
 ```
 
@@ -96,9 +109,26 @@ The only way to clear a field is delete a user and add this user back with new v
 
 
 ```python
+# Normal Response:
 {
     'statusCode': 790200,
     'statusDescription': 'Success.'
+}
+
+# response with duplicate user accounts in different server without aunthentication server provided in input.
+{
+    "users": [
+        {
+            "authenticationServer": "NetBrain",
+            "userName": "user1"
+        },
+        {
+            "authenticationServer": "AD",
+            "userName": "user1"
+        }
+    ],
+    "statusCode": 792032,
+    "statusDescription": "There are users with the same name 'user1' in the system,You need to specify the authentication server."
 }
 ```
 
@@ -121,35 +151,28 @@ full_url = nb_url + "/ServicesAPI/API/V1/CMDB/Users"
 headers = {'Content-Type': 'application/json', 'Accept': 'application/json'}
 headers["Token"] = token
 
-username = "NetBrain2"
-email = "NetBrain2@netbrain.com"
-firstName = "NetBrain"
-lastName = "NetBrain"
-password = "NetBrain"
-authenticationType = 1 
-phoneNumber = "string"
-department = "string"
-description = "string"
-allowChangePassword = True
-deactivatedTime = "string"
-isSystemAdmin = False
-tenants = []
-
 body = {
-        "username": username,
-        "email": email,
-        "firstName": firstName,
-        "lastName": lastName,
-        "password": password,
-        "authenticationType" : authenticationType,
-        "phoneNumber" : phoneNumber,
-        "department" : department,
-        "description" : description,
-        "allowChangePassword": allowChangePassword,
-        "deactivatedTime" : deactivatedTime,
-        "isSystemAdmin":isSystemAdmin,
-        "tenants" : tenants
-       }
+        "username": "user1",
+        "authenticationServer":"NetBrain",
+        "email": "user1@sso.com",
+        "firstName": "user1",
+        "lastName": "user1",
+        "phoneNumber" : "",
+        "department" : "",
+        "description" : "",
+        "deactivatedTime" : "",
+        "isSystemAdmin":"true",
+        "tenants" : [{
+            "tenantName":"tenant_71a1",
+            "isTenantAdmin":false,
+            "allowCreateDomain":"false",
+            "domains":[{
+                "domainName":"domain_cyj",
+                "domainRoles":["domainAdmin"]
+            }]
+        }]
+}
+
 
 try:
     response = requests.put(full_url, data = json.dumps(body), headers = headers, verify = False)
@@ -157,7 +180,7 @@ try:
         result = response.json()
         print (result)
     else:
-        print ("Add New User failed! - " + str(response.text))
+        print ("Update User failed! - " + str(response.text))
     
 except Exception as e:
     print (str(e)) 
@@ -177,18 +200,24 @@ curl -X PUT \
   -H 'cache-control: no-cache' \
   -H 'token: 005fd6cc-cf08-4742-985b-902503dad2a4' \
   -d '{
-        "username": "NetBrain1",
-        "email": "NetBrain1@netbrain.com",
-        "firstName": "NetBrain",
-        "lastName": "NetBrain",
-        "password": "NetBrain",
-        "authenticationType" : 1,
-        "phoneNumber" : "string",
-        "department" : "string",
-        "description" : "string",
-        "allowChangePassword": "True",
-        "deactivatedTime" : "string",
-        "isSystemAdmin":"True",
-        "tenants" : []
-    }'
+        "username": "user1",
+        "authenticationServer":"NetBrain",
+        "email": "user1@sso.com",
+        "firstName": "user1",
+        "lastName": "user1",
+        "phoneNumber" : "",
+        "department" : "",
+        "description" : "",
+        "deactivatedTime" : "",
+        "isSystemAdmin":"true",
+        "tenants" : [{
+            "tenantName":"tenant_71a1",
+            "isTenantAdmin":false,
+            "allowCreateDomain":"false",
+            "domains":[{
+                "domainName":"domain_cyj",
+                "domainRoles":["domainAdmin"]
+            }]
+        }]
+}'
 ```

@@ -65,6 +65,12 @@ Use this API to get the connected layer 2 switch ports of an end system.
     "hostname": "Bos-SW",
     "interface": "Ethernet 0/1"
 }
+
+# If customer don't have enough privilige:
+{
+    "statusCode":795003,
+    "statusDescription":"Insufficient permissions: the current user has insufficient permissions to perform the requested operation. The user has no tenant or domain access permission.sharePolicyManagement"
+}
 ```
 
 # Full Example

@@ -111,6 +111,12 @@ Call this API to get all devices in the device group within the group name provi
     "statusCode": 790200,
     "statusDescription": "Success."
 }
+
+# If customer don't have enough privilige:
+{
+    "statusCode":795003,
+    "statusDescription":"Insufficient permissions: the current user has insufficient permissions to perform the requested operation. The user has no tenant or domain access permission.sharePolicyManagement"
+}
 ```
 
 # Full Example

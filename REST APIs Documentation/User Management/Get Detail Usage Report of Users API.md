@@ -1,7 +1,7 @@
 
 # User API Design
 
-## ***GET*** /V1/CMDB/Users/UsageReport{?username}&{?tenantId}&{?domainId}&{?fromDate}&{?toDate}
+## ***GET*** /V1/CMDB/Users/UsageReport{?username}&{?tenantId}&{?domainId}&{?fromDate}&{?toDate}&{?authenticationServer}
 Call this API to get the detail usage report of one user according to tenant/domain in a time specified time range .
 
 ## Detail Information
@@ -33,6 +33,8 @@ Call this API to get the detail usage report of one user according to tenant/dom
 |domainId | string  | Domain id, if not specifed, check all domains on tenant specifed by tenantId.  |
 |fromDate | string  | Start time, if not specified, from the beginning of the system installed. Format: yyyy-MM-ddThh:mm:ssZ, sample: "2018-03-07T04:59:59Z". Use default value 0001-01-01T00:00:00Z if value is null or of invalid format. |
 |toDate | string  | End time, if not specified, use the current system time. Format: yyyy-MM-ddThh:mm:ssZ, sample: "2018-03-07T04:59:59Z". Use default value 0001-01-01T00:00:00Z if value is null or of invalid format.  |
+|authenticationServer | string | The corresponding name of the authentication server. |
+***Note:*** the "authenticationServer" is an optional attribute, to prevent mis-retrieving if there are same user account names exist in different servers. Check the detail in the following example.
 
 ## Headers
 
@@ -56,6 +58,9 @@ Call this API to get the detail usage report of one user according to tenant/dom
 |**Name**|**Type**|**Description**|
 |------|------|------|
 |<img width=100/>|<img width=100/>|<img width=500/>|
+|users|list of object| The list contains the dupilcate account information in different server.|
+|users.authenticationServer|string|The name of authentication server.|
+|users.userName|string|The name of the user account.|
 |usageDetails| list |List of usage object.|
 |usageDetails.tenantName| string | Name of working tenant.  |
 |usageDetails.domainName| string | The name of user's working domain.  |
@@ -73,6 +78,7 @@ Call this API to get the detail usage report of one user according to tenant/dom
 
 
 ```python
+# Normal response
 {
     "usageDetails": [
         {
@@ -179,6 +185,22 @@ Call this API to get the detail usage report of one user according to tenant/dom
     "statusCode": 790200,
     "statusDescription": "Success."
 }
+
+# response with duplicate user accounts in different server without aunthentication server provided in input.
+{
+    "users": [
+        {
+            "authenticationServer": "NetBrain",
+            "userName": "user1"
+        },
+        {
+            "authenticationServer": "AD",
+            "userName": "user1"
+        }
+    ],
+    "statusCode": 792032,
+    "statusDescription": "There are users with the same name 'user1' in the system,You need to specify the authentication server."
+}
 ```
 
 # Full Example:
@@ -225,6 +247,22 @@ try:
 except Exception as e:
     print (str(e)) 
 ```
+    
+    "Get Detail User Report failed! - "
+    {
+        "users": [
+            {
+                "authenticationServer": "NetBrain",
+                "userName": "API_Test"
+            },
+            {
+                "authenticationServer": "AD",
+                "userName": "API_Test"
+            }
+        ],
+        "statusCode": 792032,
+        "statusDescription": "There are users with the same name 'API_Test' in the system,You need to specify the authentication server."
+    }
 
 # cURL Code from Postman:
 

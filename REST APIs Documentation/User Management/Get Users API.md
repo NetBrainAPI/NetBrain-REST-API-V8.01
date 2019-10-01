@@ -1,7 +1,7 @@
 
  # User API Design 7.1a
 
-## ***GET*** /V1/CMDB/Users{?roleName}
+## ***GET*** /V1/CMDB/Users{?username}&{?authenticationServer}
 Calling this API to get user information. If input username, API return just this one user information. If no specific user name is input, API return all user information.
 
 ## Detail Information
@@ -29,6 +29,8 @@ Calling this API to get user information. If input username, API return just thi
 |------|------|------|
 |<img width=100/>|<img width=100/>|<img width=500/>|
 | username | string  | The name of Netbrain system user. This field is the key to get the user information. if set "username" = null or "username" == "", API will returns all users information |
+|authenticationServer | string | The corresponding name of the authentication server. |
+***Note:*** the "authenticationServer" is an optional attribute, to prevent mis-retrieving if there are same user account names exist in different servers. Check the detail in the following example.
 
 ## Headers
 
@@ -66,6 +68,9 @@ Calling this API to get user information. If input username, API return just thi
 |UserData.deactivatedTime| string | Specify the time when the user account is expired.  |
 |UserData.isSystemAdmin| string | Decide whether to allocate the system administrator role to the user.  |
 |UserData.TenantAndRole| list of TenantAndRole object |Specify Tenant And Role for the user.<br>▪ tenantId (string) - the tenant that the user can access.<br>▪ isAdmin(bool) - decide whether to allocate the tenant administrator role to the user. If it is false, you need to specify a domain for the user to access.<br>▪ canAddDomain(bool) - decide whether to allow the user to create domains.|
+|users|list of object| The list contains the dupilcate account information in different server.|
+|users.authenticationServer|string|The name of authentication server.|
+|users.userName|string|The name of the user account.|
 |statusCode| integer | Code issued by NetBrain server indicating the execution result.  |
 |statusDescription| bool | The explanation of the status code. |
 
@@ -74,6 +79,8 @@ Calling this API to get user information. If input username, API return just thi
 
 
 ```python
+# Normal Response:
+
 {
     "UserData": [
         {
@@ -226,6 +233,22 @@ Calling this API to get user information. If input username, API return just thi
     "statusCode": 790200,
     "statusDescription": "Success."
 }
+
+# response with duplicate user accounts in different server without aunthentication server provided in input.
+{
+    "users": [
+        {
+            "authenticationServer": "NetBrain",
+            "userName": "user1"
+        },
+        {
+            "authenticationServer": "AD",
+            "userName": "user1"
+        }
+    ],
+    "statusCode": 792032,
+    "statusDescription": "There are users with the same name 'user1' in the system,You need to specify the authentication server."
+}
 ```
 
 # Full Example:
@@ -250,7 +273,8 @@ headers["Token"] = token
 username = ""
 
 data = {
-        "username":username
+        "username":username,
+        "authenticationServer":"NetBrain"
     }
 
 try:
@@ -274,10 +298,16 @@ except Exception as e:
 
 ```python
 curl -X GET \
-  'http://192.168.28.79/ServicesAPI/API/V1/CMDB/Users?username=' \
-  -H 'Postman-Token: 70a57d6b-200e-45dd-884c-c1652f407b83' \
+  'http://192.168.28.173/ServicesAPI/API/V1/CMDB/Users?username=&authenticationServer=NetBrain' \
+  -H 'Accept: */*' \
+  -H 'Accept-Encoding: gzip, deflate' \
+  -H 'Cache-Control: no-cache' \
+  -H 'Connection: keep-alive' \
+  -H 'Host: 192.168.28.173' \
+  -H 'Postman-Token: 3cd9a344-50f6-4ae9-8c79-41a01f90ca41,e008e5f9-4fd7-4f2e-8e39-fd77d54d0651' \
+  -H 'User-Agent: PostmanRuntime/7.15.2' \
   -H 'cache-control: no-cache' \
-  -H 'token: 220d6462-ba64-4058-83cb-affb2d55de78'
+  -H 'token: b2cd935b-51ad-4f5d-a713-b195d041fa48'
 ```
 
 # Error Examples:

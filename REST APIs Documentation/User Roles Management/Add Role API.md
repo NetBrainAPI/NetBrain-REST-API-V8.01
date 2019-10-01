@@ -26,7 +26,7 @@ Call this API to add a new role into Netbrain system and grant privileges to thi
 |<img width=100/>|<img width=100/>|<img width=500/>|
 |roleName* | string  | The name of the created role. length between 0 and 128. The following special characters are not allowed in roleName: '/', ':', '*', '?', '"', '<', '>', '|', '$'  |
 |description | string  | The description of the role. This field is optional.  |
-|privileges | list of integer  | The privileges that the role owns. See roles and privileges for more details. Detail information please check Roles and Privileges Table below. |
+|privileges | list of integer  | The privileges that the role owns. See roles and privileges for more details. this field is optional. |
 
 > ***Example***
 

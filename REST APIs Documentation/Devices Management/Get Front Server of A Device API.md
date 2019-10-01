@@ -65,6 +65,12 @@ Call this API to set a value for the specified attriute of a device.
     "statusCode": 793404,
     "statusDescription": "No resource"
 }
+
+# If customer don't have enough privilige:
+{
+    "statusCode":795003,
+    "statusDescription":"Insufficient permissions: the current user has insufficient permissions to perform the requested operation. The user has no tenant or domain access permission.sharePolicyManagement"
+}
 ```
 
 * # Full Example:

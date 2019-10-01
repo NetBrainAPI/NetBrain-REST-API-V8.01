@@ -2,7 +2,7 @@
 # Device API Design
 
 ## ***DELETE*** /V1/CMDB/Devices
-Call this API to delete a device from current domain.
+Call this API to delete a device in current domain.
 
 ## Detail Information
 
@@ -66,6 +66,12 @@ The latest update to the HTTP 1.1 specification (RFC 7231) explicitly permits an
 {
     "statusCode": 790200,
     "statusDescription": "Success."
+}
+
+# If customer don't have enough privilige:
+{
+    "statusCode":795003,
+    "statusDescription":"Insufficient permissions: the current user has insufficient permissions to perform the requested operation. The user has no tenant or domain access permission.sharePolicyManagement"
 }
 ```
 

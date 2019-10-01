@@ -31,7 +31,7 @@ NOTE:  must be a leaf site, error would return if the parameter is root site or 
 |------|------|------|
 |<img width=100/>|<img width=100/>|<img width=500/>|
 |sitePath^ | string  | Full path name of a site. For example, 'My Network/Site1/Boston/Dev'. |
-|siteId^ | string  |  The unique id of specified site.  |
+|siteId^ | string  |  The unique id of specified site. |
 >>**Note :** ^ required if the other parameter is null.
 
 ## Headers

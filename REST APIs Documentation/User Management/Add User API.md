@@ -29,7 +29,8 @@ Call this API to create a new user account in Netbrain system.
 |firstName* | string  | The first name of the user. This parameter is required.  |
 |lastName* | string  | The last name of the user. This parameter is required. |
 |password* | string  | The login password. The allowed length is 6-128 characters by default. This parameter is required.  |
-|authenticationType | integer |The authentication type for the user account.<br>▪ 1 - Local<br>Currently, we only support customer to add local user via API.|
+|authenticationServer | string |The name of the authentication server for create an external account.|
+|externalUserIdentity | string |the corresponding external user identity base one the authentication server. This attribute must be inserted when customer want to create an external user account via REST API. 
 |phoneNumber | string |The phone number of the user.|
 |department | string |The department that the user belongs to.|
 |description | string |Any description about the account.|
@@ -43,19 +44,27 @@ Call this API to create a new user account in Netbrain system.
 
 ```python
 {
-      "username": "NetBrain",
-      "email": "NetBrain@netbrain.com",
-      "firstName": "NetBrain",
-      "lastName": "NetBrain",
-      "password": "NetBrain",
-      "authenticationType": 1 ,
-      "phoneNumber": "string",
-      "department": "string",
-      "description": "string",
-      "allowChangePassword": True or False,
-      "deactivatedTime": "string",
-      "isSystemAdmin": True or False,
-      "tenants": [tenants objects ...]
+        "username": "user1",
+        "externalUserIdentity":"xxxx",
+        "authenticationServer":"sso",
+        "email": "user1@sso.com",
+        "firstName": "user1",
+        "lastName": "user1",
+        "password": "user1",
+        "phoneNumber" : "",
+        "department" : "",
+        "description" : "",
+        "deactivatedTime" : "",
+        "isSystemAdmin":"false",
+        "tenants" : [{
+            "tenantName":"tenant_71a1",
+            "isTenantAdmin":false,
+            "allowCreateDomain":"false",
+            "domains":[{
+                "domainName":"domain_cyj",
+                "domainRoles":["domainAdmin"]
+            }]
+        }]
 }
 ```
 
@@ -117,35 +126,29 @@ full_url = nb_url + "/ServicesAPI/API/V1/CMDB/Users"
 headers = {'Content-Type': 'application/json', 'Accept': 'application/json'}
 headers["Token"] = token
 
-username = "NetBrain2"
-email = "NetBrain2@netbrain.com"
-firstName = "NetBrain"
-lastName = "NetBrain"
-password = "NetBrain"
-authenticationType = 1 
-phoneNumber = "string"
-department = "string"
-description = "string"
-allowChangePassword = True
-deactivatedTime = "string"
-isSystemAdmin = False
-tenants = []
-
 body = {
-        "username": username,
-        "email": email,
-        "firstName": firstName,
-        "lastName": lastName,
-        "password": password,
-        "authenticationType" : authenticationType,
-        "phoneNumber" : phoneNumber,
-        "department" : department,
-        "description" : description,
-        "allowChangePassword": allowChangePassword,
-        "deactivatedTime" : deactivatedTime,
-        "isSystemAdmin":isSystemAdmin,
-        "tenants" : tenants
-       }
+        "username": "externalAccount",
+        "externalUserIdentity":"xxxx",
+        "authenticationServer":"TACACS",
+        "email": "user1@netbrain.com",
+        "firstName": "user1",
+        "lastName": "user1",
+        "password": "user1",
+        "phoneNumber" : "",
+        "department" : "",
+        "description" : "",
+        "deactivatedTime" : "",
+        "isSystemAdmin":"false",
+        "tenants" : [{
+            "tenantName":"tenant_71a1",
+            "isTenantAdmin":false,
+            "allowCreateDomain":"false",
+            "domains":[{
+                "domainName":"domain_cyj",
+                "domainRoles":["domainAdmin"]
+            }]
+        }]
+}
 
 try:
     response = requests.post(full_url, data = json.dumps(body), headers = headers, verify = False)
@@ -173,148 +176,27 @@ curl -X POST \
   -H 'cache-control: no-cache' \
   -H 'token: 005fd6cc-cf08-4742-985b-902503dad2a4' \
   -d '{
-        "username": "NetBrain1",
-        "email": "NetBrain1@netbrain.com",
-        "firstName": "NetBrain",
-        "lastName": "NetBrain",
-        "password": "NetBrain",
-        "authenticationType" : 1,
-        "phoneNumber" : "string",
-        "department" : "string",
-        "description" : "string",
-        "allowChangePassword": "True",
-        "deactivatedTime" : "string",
-        "isSystemAdmin":"True",
-        "tenants" : []
-    }'
+        "username": "externalAccount",
+        "externalUserIdentity":"xxxx",
+        "authenticationServer":"TACACS",
+        "email": "user1@netbrain.com",
+        "firstName": "user1",
+        "lastName": "user1",
+        "password": "user1",
+        "phoneNumber" : "",
+        "department" : "",
+        "description" : "",
+        "deactivatedTime" : "",
+        "isSystemAdmin":"false",
+        "tenants" : [{
+            "tenantName":"tenant_71a1",
+            "isTenantAdmin":false,
+            "allowCreateDomain":"false",
+            "domains":[{
+                "domainName":"domain_cyj",
+                "domainRoles":["domainAdmin"]
+            }]
+        }]
+}'
 ```
 
-# Error Examples:
-
-
-```python
-###################################################################################################################    
-
-"""Error 1: empty inputs"""
-
-Input:
-        
-        username = "" # Can not be null.
-        email = "" # Can not be null.
-        firstName = "" # Can not be null.
-        lastName = "" # Can not be null.
-        password = "" # Can not be null.
-        authenticationType = None 
-        phoneNumber = ""
-        department = ""
-        description = ""
-        allowChangePassword = None # Can not be null.
-        deactivatedTime = ""
-        isSystemAdmin = None # Can not be null.
-        tenants = []
-
-
-Response:
-    
-    # Null parameters checking sequence.
-    
-    "Add New User failed! - 
-    {"statusCode":791000,"statusDescription":"Null parameter: the parameter 'username' cannot be null."}
-
-    Add New User failed! - 
-    {"statusCode":791000,"statusDescription":"Null parameter: the parameter 'email' cannot be null."}
-
-    Add New User failed! - 
-    {"statusCode":791000,"statusDescription":"Null parameter: the parameter 'firstName' cannot be null."}
-
-    Add New User failed! - 
-    {"statusCode":791000,"statusDescription":"Null parameter: the parameter 'lastName' cannot be null."}
-
-    Add New User failed! - 
-    {"statusCode":791000,"statusDescription":"Null parameter: the parameter 'allowChangePassword' cannot be null."}
-
-    Add New User failed! - 
-    {"statusCode":791000,"statusDescription":"Null parameter: the parameter 'isSystemAdmin' cannot be null."}
-
-    Add New User failed! - 
-    {"statusCode":791000,"statusDescription":"Null parameter: the parameter 'password' cannot be null."}"
-    
-###################################################################################################################    
-
-"""Error 2: wrong inputs""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
-Input:
-    
-        username = 1 # should be string
-        email = "1@netbraintech.com"
-        firstName = "Net"
-        lastName = "brain"
-        password = "Netbrain"
-        authenticationType = None 
-        phoneNumber = ""
-        department = ""
-        description = ""
-        allowChangePassword = True
-        deactivatedTime = ""
-        isSystemAdmin = True
-        tenants = []
-
-Response:
-    
-        "{
-            'statusCode': 790200, 
-            'statusDescription': 'Success.'
-        }"
-        
-###################################################################################################################    
-
-"""Error 3: wrong format email input""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
-Input:
-    
-        email = "@netbraintech.com"
-        
-
-Response:
-    
-        "Add New User failed! - 
-        {
-            "statusCode":791001,
-            "statusDescription":"Invalid parameter: the parameter 'email' is invalid."
-        }"
-        
-###################################################################################################################    
-
-"""Error 4: duplicate email input""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
-Input:
-    
-        email = "Netbrain4@netbraintech.com" # Another existing user already use this email. Which means users can not 
-                                             # register two user acounts with same email address.
-        
-
-Response:
-    
-        "Add New User failed! - 
-            {
-                "statusCode":791007,
-                "statusDescription":"email NetBrain4@netbraintech.com already exists."
-            }"
-            
-###################################################################################################################    
-
-"""Error 5: duplicate username input""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
-Input:
-    
-        username = "Netbrain" # Another existing user already use this name.
-        
-
-Response:
-    
-        "Add New User failed! - 
-            {
-                "statusCode":791007,
-                "statusDescription":"user Netbrain already exists."
-            }"
-```
