@@ -28,8 +28,7 @@ Calling this API to update a tenant specified by tenant id (how to get ID? see G
 |tenantName* | string  | The name of the created tenant.  |
 |maximumNodes | integer  | The maximum license nodes that the tenant owns. The number must be greater than 0.  |
 |description | string  | The description about the tenant.  |
-|maximumPorts | integer  | The maximum SDN physical ports that the tenant owns. >= 0. |
-|maximumCPU | integer  | The maximum SDN physical CPU's that the tenant owns. >= 0.  |
+
 
 > ***Example***
 
