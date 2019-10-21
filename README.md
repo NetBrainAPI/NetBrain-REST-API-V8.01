@@ -1,10 +1,10 @@
 
 
 # Netbrain REST API Documentation
-Version 8.01
-To view details about integration workflows with other platforms, view "3rd Party Software Integration Documentation". These include workflows like Trigger Diagnosis where NetBrain is triggered from ticketing and monitoring tools to generate map URLs. Integration Workflows also incliudes Single Panel of Glass where data from ticketing and monitoring tools is overalyed on NetBrain Map.
-To view details about use cases which can be implemented with NetBrain REST APIs, see "Golden Use Case Templates".
-To see the list of all REST APIs view "REST APIs Documentation".
+Version 8.01<br>
+To view details about integration workflows with other platforms, view "3rd Party Software Integration Documentation". These include workflows like Trigger Diagnosis where NetBrain is triggered from ticketing and monitoring tools to generate map URLs. Integration Workflows also incliudes Single Panel of Glass where data from ticketing and monitoring tools is overalyed on NetBrain Map.<br>
+To view details about use cases which can be implemented with NetBrain REST APIs, see "Golden Use Case Templates".<br>
+To see the list of all REST APIs view "REST APIs Documentation".<br>
 
 ## New APIs in this version
 1) [Get the connected switch ports of an end system API](https://github.com/NetBrainAPI/NetBrain-REST-API-V8.0/blob/master/REST%20APIs%20Documentation/Devices%20Management/Get%20the%20connected%20switch%20ports%20of%20an%20end%20system%20API.md)<br>
