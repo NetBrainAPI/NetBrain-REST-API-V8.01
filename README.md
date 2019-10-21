@@ -6,6 +6,11 @@ To view details about integration workflows with other platforms, view "3rd Part
 To view details about use cases which can be implemented with NetBrain REST APIs, see "Golden Use Case Templates".
 To see the list of all REST APIs view "REST APIs Documentation".
 
+## New APIs in this version
+1) [Get the connected switch ports of an end system API](https://github.com/NetBrainAPI/NetBrain-REST-API-V8.0/blob/master/REST%20APIs%20Documentation/Devices%20Management/Get%20the%20connected%20switch%20ports%20of%20an%20end%20system%20API.md)<br>
+2) [Get Connected Switch Port API](https://github.com/NetBrainAPI/NetBrain-REST-API-V8.0/blob/master/REST%20APIs%20Documentation/Topology%20Management/Get%20Connected%20Switch%20Port%20API.md)<br>
+
+
 ## Section 1) Golden Use Case Templates
 1) [Get Path Detail Information by Calling APIs](https://github.com/NetBrainAPI/NetBrain-REST-API-V8.01/blob/master/Golden%20Use%20Case%20Templates/Get%20Path%20By%20Calling%20APIs%20V8.0.md)<br>
 2) [Sites Management by Calling APIs](https://github.com/NetBrainAPI/NetBrain-REST-API-V8.01/blob/master/Golden%20Use%20Case%20Templates/Sites%20Management%20by%20Calling%20APIs.md)<br>
