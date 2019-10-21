@@ -1,7 +1,10 @@
 
 
 # Netbrain REST API Documentation
-Netbrain provide all available REST APIs in this repository. We offer two sections in current repo. First section describe the workflow of six customer golden use cases with API multiple calling. Second section elaborate the detail information for each API. We provide resonable explanations and clear sample code in both sections. We hope users can understand the different features of different APIs and construct a concept to solve some use cases by multi-calling Netbrain REST APIs.  
+Version 8.01
+To view details about integration workflows with other platforms, view "3rd Party Software Integration Documentation". These include workflows like Trigger Diagnosis where NetBrain is triggered from ticketing and monitoring tools to generate map URLs. Integration Workflows also incliudes Single Panel of Glass where data from ticketing and monitoring tools is overalyed on NetBrain Map.
+To view details about use cases which can be implemented with NetBrain REST APIs, see "Golden Use Case Templates".
+To see the list of all REST APIs view "REST APIs Documentation".
 
 ## Section 1) Golden Use Case Templates
 1) [Get Path Detail Information by Calling APIs](https://github.com/NetBrainAPI/NetBrain-REST-API-V8.01/blob/master/Golden%20Use%20Case%20Templates/Get%20Path%20By%20Calling%20APIs%20V8.0.md)<br>
