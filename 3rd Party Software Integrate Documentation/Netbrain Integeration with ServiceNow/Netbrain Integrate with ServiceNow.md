@@ -289,19 +289,21 @@ d) Update Business Rule in ServiceNow.<br>
 <img src="images\worddavdac55ddc321cc435666ee41213215dce.png" /><br>
 
 The following types of maps can be defined in the stub:<br>
-* Map 1 device and its neighbors<br>
+* Map Devices and its neighbors<br>
 ---* Topology options: IPv4 L3, IPv6 L3, L2.<br>
 ---* All interfaces or 1 specific interface (just specify long/short form name).<br>
-* Open site map<br>
+* Open Site Map of the Device<br>
 ---* Existing site map, or duplicate of site map.<br>
 * Open existing Qmap<br>
 ---* Existing map, or duplicate of site map.<br>
-* Draw a path<br>
+* Map a Path<br>
 ---* Path type: L3, L3 Active, L2<br>
 ---* Date Source: Live Network, Baseline, historical data<br>
 ---* Protocol<br>
 ---* Gateway device<br>
 ---* One way or bidirectional
+* Open Context Map <br>
+* Use Qapp to Create a Map<br>
 
 ### b) Customizing Runbooks in the Stub. <a name="Runbooks"></a>
 <img src="images\worddav713ca71772831400453eeb9247bea908.png" /><br>
