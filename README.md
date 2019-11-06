@@ -68,7 +68,7 @@ To see the list of all REST APIs view "REST APIs Documentation".<br>
 9) [Update Device Access Policy API](https://github.com/NetBrainAPI/NetBrain-REST-API-V8.01/blob/master/REST%20APIs%20Documentation/Device%20Access%20Control/UpdateDeviceAccessPolicy%20API.md)<br>
 
 
-### [Device Group Management](https://https://github.com/NetBrainAPI/NetBrain-REST-API-V8.01/tree/master/REST%20APIs%20Documentation/Device%20Group%20Management) 
+### [Device Group Management](https://github.com/NetBrainAPI/NetBrain-REST-API-V8.01/tree/master/REST%20APIs%20Documentation/Device%20Group%20Management) 
 1) [Add Device Group API](https://github.com/NetBrainAPI/NetBrain-REST-API-V8.01/blob/master/REST%20APIs%20Documentation/Device%20Group%20Management/Add%20Device%20Group.md)<br>
 2) [Add devices to Device Group API](https://github.com/NetBrainAPI/NetBrain-REST-API-V8.01/blob/master/REST%20APIs%20Documentation/Device%20Group%20Management/Add%20Devices%20to%20Group.md)<br>
 3) [Delete Device Group API](https://github.com/NetBrainAPI/NetBrain-REST-API-V8.01/blob/master/REST%20APIs%20Documentation/Device%20Group%20Management/Delete%20Device%20Group.md)<br>
