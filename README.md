@@ -9,6 +9,11 @@ To see the list of all REST APIs view "REST APIs Documentation".<br>
 ## New APIs in this version
 1) [Get the connected switch ports of an end system API](https://github.com/NetBrainAPI/NetBrain-REST-API-V8.0/blob/master/REST%20APIs%20Documentation/Devices%20Management/Get%20the%20connected%20switch%20ports%20of%20an%20end%20system%20API.md)<br>
 2) [Get Connected Switch Port API](https://github.com/NetBrainAPI/NetBrain-REST-API-V8.0/blob/master/REST%20APIs%20Documentation/Topology%20Management/Get%20Connected%20Switch%20Port%20API.md)<br>
+3) [Add Device Group API](https://github.com/NetBrainAPI/NetBrain-REST-API-V8.01/blob/master/REST%20APIs%20Documentation/Device%20Group%20Management/Add%20Device%20Group.md)<br>
+4) [Add devices to Device Group API](https://github.com/NetBrainAPI/NetBrain-REST-API-V8.01/blob/master/REST%20APIs%20Documentation/Device%20Group%20Management/Add%20Devices%20to%20Group.md)<br>
+5) [Delete Device Group API](https://github.com/NetBrainAPI/NetBrain-REST-API-V8.01/blob/master/REST%20APIs%20Documentation/Device%20Group%20Management/Delete%20Device%20Group.md)<br>
+6) [Delete devices from Device Group API](https://github.com/NetBrainAPI/NetBrain-REST-API-V8.01/blob/master/REST%20APIs%20Documentation/Device%20Group%20Management/Delete%20Devices%20from%20Group.md)<br>
+7) [Get devices of Device Group API](https://github.com/NetBrainAPI/NetBrain-REST-API-V8.01/blob/master/REST%20APIs%20Documentation/Device%20Group%20Management/Get%20Devices%20of%20Group.md)<br>
 
 
 ## Section 1) Golden Use Case Templates
@@ -61,6 +66,14 @@ To see the list of all REST APIs view "REST APIs Documentation".<br>
 7) [Remove Device Access Policies from User API](https://github.com/NetBrainAPI/NetBrain-REST-API-V8.01/blob/master/REST%20APIs%20Documentation/Device%20Access%20Control/RemoveDeviceAccessPoliciesFromUser%20API.md)<br>
 8) [Set User Device Access Policy API](https://github.com/NetBrainAPI/NetBrain-REST-API-V8.01/blob/master/REST%20APIs%20Documentation/Device%20Access%20Control/SetUserDeviceAccessPolicy%20API.md)<br>
 9) [Update Device Access Policy API](https://github.com/NetBrainAPI/NetBrain-REST-API-V8.01/blob/master/REST%20APIs%20Documentation/Device%20Access%20Control/UpdateDeviceAccessPolicy%20API.md)<br>
+
+
+### [Device Group Management](https://https://github.com/NetBrainAPI/NetBrain-REST-API-V8.01/tree/master/REST%20APIs%20Documentation/Device%20Group%20Management) 
+1) [Add Device Group API](https://github.com/NetBrainAPI/NetBrain-REST-API-V8.01/blob/master/REST%20APIs%20Documentation/Device%20Group%20Management/Add%20Device%20Group.md)<br>
+2) [Add devices to Device Group API](https://github.com/NetBrainAPI/NetBrain-REST-API-V8.01/blob/master/REST%20APIs%20Documentation/Device%20Group%20Management/Add%20Devices%20to%20Group.md)<br>
+3) [Delete Device Group API](https://github.com/NetBrainAPI/NetBrain-REST-API-V8.01/blob/master/REST%20APIs%20Documentation/Device%20Group%20Management/Delete%20Device%20Group.md)<br>
+4) [Delete devices from Device Group API](https://github.com/NetBrainAPI/NetBrain-REST-API-V8.01/blob/master/REST%20APIs%20Documentation/Device%20Group%20Management/Delete%20Devices%20from%20Group.md)<br>
+5) [Get devices of Device Group API](https://github.com/NetBrainAPI/NetBrain-REST-API-V8.01/blob/master/REST%20APIs%20Documentation/Device%20Group%20Management/Get%20Devices%20of%20Group.md)<br>
 
 
 ### [Discovery Task Management](https://github.com/NetBrainAPI/NetBrain-REST-API-V8.01/tree/master/REST%20APIs%20Documentation/Discovery%20Task%20Management) 
