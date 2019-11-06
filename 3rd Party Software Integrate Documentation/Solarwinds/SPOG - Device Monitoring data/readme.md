@@ -1,7 +1,8 @@
----
-subtitle: Single Pane of Glass – Solarwinds Device Monitoring
-title: NetBrain Integration Deployment Guide
----
+NetBrain Integration Deployment Guide
+=====================================
+
+Single Pane of Glass – Solarwinds Device Monitoring
+------------------------------------------------------------
 
 Use Case
 ========
@@ -11,31 +12,19 @@ Description
 
 This use case visualizes Solarwinds monitoring data upon NetBrain dynamic maps
 based on device. The data view visualizes the following data on device level:
-
 1.  CPU Load% (Map URL to Solarwinds device details)
-
 2.  Memory Used %
-
 3.  System Uptime
-
 4.  SysLog messages
 
 Following data is seen on the interface level:
-
 1.  Utilization In %
-
 2.  Utilization Out %
-
 3.  In Discards This Hour
-
 4.  Out Discards This Hour
-
 5.  In Errors This Today
-
 6.  Out Errors This Today
-
 7.  CRC Align Errors Today
-
 8.  MTU
 
 NetBrain Single Pane of Glass Result Sample
