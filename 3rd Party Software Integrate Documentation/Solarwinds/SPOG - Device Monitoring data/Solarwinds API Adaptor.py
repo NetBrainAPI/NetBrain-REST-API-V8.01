@@ -1,12 +1,18 @@
 import requests
 import json
 import urllib3
-from orionsdk import SwisClient
 import re
 import pythonutil
-   
 urllib3.disable_warnings()
-  
+
+#verify import of solarwinds sdk 
+importException = None
+try:
+    from orionsdk import SwisClient
+except ModuleNotFoundError as e:
+    importException ="Failed to import Solarwinds SDK: "+str(e)
+
+
 class APIPlugin:
     _headers = {"Content-Type": "application/json",
                 "Accept": "application/json"}
@@ -65,6 +71,8 @@ def extract_param(param):
 def _test(param):
     if isinstance(param, str):
         param = json.loads(param)
+    if importException is not None:
+        return {'isFailed':True, 'msg':importException}
 
     username = param['username']
     password = param['password']
@@ -78,7 +86,7 @@ def _test(param):
     try:
         result = api._query(query, deviceName)
         if "403" in result:
-            rtn = {'isFailed':True, 'msg':result}
+            rtn = {'isFailed':True, 'msg':"Credentials entered are incorrect: "+result}
         elif "Network Performance Monitor" in result['results'][0]['SettingValue']:
             rtn = {'isFailed':False, 'msg':'Endpoint and credentials are verified!'}
         return json.dumps(rtn)
@@ -94,6 +102,6 @@ def getData(param):
     return json.dumps(rtn)
  
  
-param = {'deviceName': 'NBUSMA-SW1', 'endpoint': 'http://192.168.31.99', 'password': 'Netbrain1', 'query': 'SELECT NodeID,IPAddress,CPULoad,PercentMemoryUsed,Uri FROM Orion.Nodes WHERE Caption LIKE @id', 'username': 'admin'}
+#param = {'deviceName': 'NBUSMA-SW1', 'endpoint': 'http://192.168.31.99', 'password': 'Netbrain1', 'query': 'SELECT NodeID,IPAddress,CPULoad,PercentMemoryUsed,Uri FROM Orion.Nodes WHERE Caption LIKE @id', 'username': 'admin'}
 #print(getData(param))
-print(_test(param))
+#print(_test(param))
