@@ -1,8 +1,7 @@
-NetBrain Integration Deployment Guide
-=====================================
-
-Single Pane of Glass – Solarwinds Device Monitoring
-------------------------------------------------------------
+---
+subtitle: Single Pane of Glass – Solarwinds Device Monitoring
+title: NetBrain Integration Deployment Guide
+---
 
 Use Case
 ========
@@ -10,25 +9,25 @@ Use Case
 Description
 -----------
 
-This use case visualizes Solarwinds monitoring data upon NetBrain dynamic maps
-based on device. The data view visualizes the following data on device level:
-1.  CPU Load% (Map URL to Solarwinds device details)
-2.  Memory Used %
-3.  System Uptime
-4.  SysLog messages
+Using the publicly available Solarwinds Orion SDK, NetBrain has created an
+integration compatible with NetBrain Integrated Edition release 8.0 (and newer)
+that enables a NetBrain administrator to overlay the Solarwinds device and
+interface monitoring data on user created maps.
 
-Following data is seen on the interface level:
-1.  Utilization In %
-2.  Utilization Out %
-3.  In Discards This Hour
-4.  Out Discards This Hour
-5.  In Errors This Today
-6.  Out Errors This Today
-7.  CRC Align Errors Today
-8.  MTU
+With this integration, NetBrain can overlay the following extended information
+as attributes:
 
-NetBrain Single Pane of Glass Result Sample
--------------------------------------------
+| Object Type | Available Value(s)                                                                                                                          |
+|-------------|---------------------------------------------------------------------------------------------------------------------------------------------|
+| Device      | CPU Load %                                                                                                                                  |
+|             | Device URL in Solarwinds Memory Used % System Uptime SysLog Messages                                                                        |
+| Interface   | Utilization In % Utilization Out % In Discards This Hour Out Discards This Hour In Errors Today Out Errors Today CRC Align Errors Today MTU |
+
+NetBrain Map with Solarwinds Data Overlay
+-----------------------------------------
+
+Below are two example representations of the Solarwinds data overlay on devices
+(left) and interfaces (right).
 
 ![](media/b49ed0138adfc4dd8a8770741acf7586.png)
 
@@ -40,10 +39,10 @@ Pre-requisites
 Application Version
 -------------------
 
-| Application        | Version                  |
-|--------------------|--------------------------|
-| NetBrain           | IEv8.0 and above         |
-| Solarwinds version | Orion NMP 12.2 and above |
+| Application                 | Version                   |
+|-----------------------------|---------------------------|
+| NetBrain Integrated Edition | IEv8.0 (or newer)         |
+| Solarwinds                  | Orion NMP 12.2 (or newer) |
 
 Network Connectivity
 --------------------
@@ -55,173 +54,294 @@ Network Connectivity
 User Account and Privileges
 ---------------------------
 
-| Application | User Account | Role                                    |
-|-------------|--------------|-----------------------------------------|
-| NetBrain    | Required     | System Admin                            |
-| Solarwinds  | Required     | Any role that can query monitoring data |
+| Application                 | User Account | Required Role Assignment(s) |
+|-----------------------------|--------------|-----------------------------|
+| NetBrain Integrated Edition | Required     | System Admin                |
+| Solarwinds                  | Required     | Guest (or higher)           |
 
-Deployment Instruction
-======================
+Deployment Instructions
+=======================
 
-Import OrionSDK library in NetBrain
------------------------------------
+Deploy the Solarwinds Orion SDK
+-------------------------------
 
-1.  Download “orion.zip” file
+To support Solarwinds data retrieval, the Orion SDK must be deployed on each
+Windows based machine where the NetBrain Front Server service is running in the
+customer environment.
 
-2.  RTP into every instance of Front Server and place “orion.zip” file
+1.  Download the Solarwinds Orion SDK, *orion.zip*, from the NetBrain github and
+    stage locally in the *C:\\Temp* directory on each NetBrain Windows server
+    where the Front Server service is currently running.
 
-3.  Unzip the file and place following folders inside Front Server’s python
-    library
+2.  Log into the first NetBrain Front Server machine with the *administrator*
+    user.
 
-    1.  orionsdk
+3.  Using Windows Explorer, navigate to the *C:\\Temp* directory
 
-    2.  orionsdk-0.0.6.dist-info
+4.  Unzip the *orion.zip* file locally in the *C:\\Temp* directory
 
-        Front Server’s python library location:  
-        C:\\Program Files\\NetBrain\\Front Server\\python\\Lib\\site-packages
+5.  Copy the resulting directories, *orionsdk* and *orionsdk-0.0.6.dist-info*,
+    to the NetBrain Front Server service python library
 
-Create API Adaptor
-------------------
+    *C:\\Program Files\\NetBrain\\Front Server\\python\\Lib\\site-packages*
 
-1.  Download Solarwinds API Adaptor.py file.
+Deploy the NetBrain Solarwinds API Adaptor
+------------------------------------------
 
-2.  Login NetBrain System Management.
+1.  Download the NetBrain Solarwinds API Adapter, *Solarwinds API Adaptor.py*,
+    from the NetBrain github and stage locally on the machine typically used to
+    connect to the NetBrain User Interface.
 
-3.  Navigate to Operations API Adaptors.
+2.  Using a web browser, login to the NetBrain System Management UI using the
+    *System Admin* credentials
 
-4.  Click Add button.
+    *http://\<NetBrain Web Server IP\>/admin*
 
-5.  Fill out the form with following information:
+3.  In the NetBrain System Management UI, Navigate to *Operations \> API
+    Adaptors*.
 
-    -   Adapter Name: **Solarwinds API Adapter**
+4.  In the *API Adaptors* screen, click “Add”.
 
-    -   Description: **Solarwinds API Adapter.**
+5.  Complete the *Add Adaptor* dialog screen as follows:
 
-    -   Script: **Click Import button to import the downloaded Solarwinds API
-        Adaptor.py file.**
+>   **Adapter Name:** *Solarwinds API Adaptor*
 
-6.  Click Save button.
+>   **Description:** *NetBrain Solarwinds API Adaptor*
 
-Create External API Server
---------------------------
+>   **Script:** *\<Solarwinds API Adaptor.py\>*
 
-1.  Login NetBrain Desktop.
+1.  Review the adaptor configuration, then click “Save”.
 
-2.  Navigate to Domain Management Operations API Server Manager.
+2.  Log out of the Netbrain Integrated Edition System Management UI.
 
-3.  Click Add button.
+Create Solarwinds API Server Connection
+---------------------------------------
 
-4.  Fill out the form with following information:
+**Note:** If the environment has been deployed with multiple Front Servers,
+repeat this section for each of the Front Servers.
 
-    -   Server Name: Solarwinds
+1.  Using a web browser, login to the NetBrain Desktop UI using the *System
+    Admin* credentials
 
-    -   Description: Solarwinds
+    http://\<NetBrain Web Server IP\>
 
-    -   API Source Type: Select “Solarwinds API Adapter” API Adapter created in
-        last section.
+2.  Navigate to the NetBrain *API Server Manager*
 
-    -   Endpoints: Solarwinds instance endpoint, i.e. “http://192.168.31.99”.
+    *Domain Management \> Operations \> API Server Manager*
 
-    -   Username: Solarwinds username.
+3.  In the API Server Manager screen, click “Add”.
 
-    -   Password: Solarwinds password.
+4.  Complete the Add API Server dialog screen as follows:
 
-    -   Front Server/Front Server Group: Select a proper FS/FSG.
+>   **Server Name:** *Solarwinds API Server \<Front Server\>*
 
-5.  Click Test button to test the connectivity.
+>   **Description:** *Solarwinds*
 
-    -   Successful
+>   **API Source Type:** *“Solarwinds API Adaptor”*
 
-        ![](media/0994bb1f580ba4618e542b5ab6fc0473.png)
+>   **Endpoint:** *Solarwinds instance endpoint (ex “http://192.168.31.99”)*
 
-    -   Invalid credentials
+>   **Username:** *Solarwinds guest account’s username*
 
-        ![](media/76ba3cc1ed11b56e7a925fe29cb07a7d.png)
+>   **Password:** *Solarwinds password*
 
-    -   Unreachable endpoint
+>   **Front Server/Front Server Group:** Select FS/FSG which would have
+>   reachability to Solarwinds server
 
-        ![](media/e859721078c90006fecddaf189a67a1a.png)
+1.  Click “Test” to initiate a connectivity test between the NetBrain front
+    server and the Solarwinds instance configured. Pictured below is the result
+    of a successful connectivity test followed by two typical failure scenarios:
+    Incorrect credentials and connectivity between NetBrain and Solarwinds.
 
-6.  With a successful test, click OK button to save.
+| **Successful Connection**                                                                                                                                                                                        | [./media/image3.png](./media/image3.png) |
+|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|------------------------------------------|
+| **Error Scenario:** Solarwinds Orion SDK library isn’t available to by imported by NetBrain’s Plugin **Possible Resolution:**                                                                                    | [./media/image4.png](./media/image4.png) |
+| **Error Scenario:** The entered credentials are incorrect. **Possible Resolution:** Confirm credentials specified in the Solarwinds API Adaptor configuration and retry.                                         | [./media/image5.png](./media/image5.png) |
+| **Error Scenario:** Solarwinds endpoint is unreachable. **Possible Resolution:** Confirm that the NetBrain Front Server(s) can reach the Solarwinds platform using 3rd party tools (Ping, Traceroute, Wireshark) | [./media/image6.png](./media/image6.png) |
 
- Import Data View Template
---------------------------
+### Confirm all steps are followed in section *Deploy the Solarwinds Orion SDK*.
 
-1.  Download [Solarwinds] Monitoring Data.xdvt file.
+1.  Once successful connection with the local Solarwinds instance has been
+    confirmed, click “OK” to finalize Solarwinds server connection.
 
-2.  Login NetBrain Desktop.
+2.  Repeat Steps 2-6 for each additional deployed Front Server.
 
-3.  Navigate to Main Menu Data View Template Manager.
+ Import Solarwinds Data View Template
+-------------------------------------
 
-4.  Select Import Template in target directory.
+1.  Download the NetBrain Solarwinds Dataview Template, *[Solarwinds] Monitoring
+    Data.xdvt*, from the NetBrain github and stage locally on the machine used
+    to connect to the NetBrain User Interface.
 
-5.  Click Add Data View Template … button.
+2.  Using a web browser, login to the NetBrain Desktop UI with the *System
+    Admin* credentials
 
-6.  Select the downloaded file from Step 1.
+    *http://\<NetBrain Web Server IP\>*
 
-7.  Click Import button to complete.
+3.  Navigate to the NetBrain *Data View Template Manager*
 
-8.  Navigate to Parser Library.
+    *Start Menu (The Four Dashed Lines) \> Dynamic Map \> Data View Template
+    Manager*
 
-9.  Search for Solarwinds - Device DVT, Solarwinds - Interface DVT and
-    Solarwinds - Syslog DVT.
+4.  Right-Click “Shared Templates in Tenant”, then click “New Folder”.
 
-10. Open all 3 parsers.
+5.  Name the folder *Solarwinds Single Pane of Glass*
 
-11. In Parser Type dropdown lists, select API + Solarwinds.
+6.  Right-Click the “Solarwinds Single Pane of Glass” folder, then click “Import
+    Template”
 
-Update Device Shared Device Settings
+7.  In the *Import Data View Template* dialog, click “Add Data View Template …”
+
+8.  Select the *[Solarwinds] Monitoring Data.xdvt* file, then click “Open”.
+
+9.  Confirm that the *Import Data View Template* dialog screen reflects the
+    following information:
+
+    **Name:** *[Solarwinds] Device Monitoring Data.xdvt*
+
+    **Size:** *12.32k*
+
+    **Status:** *Ready*
+
+    **Related Resources:** *3 Parsers*
+
+10. Click “Import” to initiate the import of the data view template to the
+    NetBrain system.
+
+>   **Note:** On successful completion, the status will transition from *Ready*
+>   to *Successful.* If any other status is reported, retry the operation, then
+>   contact NetBrain support.
+
+1.  Navigate to NetBrain *Parser Library*
+
+    *Start Menu (The Four Dashed Lines) \> Automation \> Parser Library*
+
+2.  In the Parser Library, search for “Solarwinds – “. Three Solarwinds parsers
+    should be returned in the search results:
+
+>   *Solarwinds – Device DVT*
+
+>   *Solarwinds – Interface DVT*
+
+>   *Solarwinds – Syslog DVT*
+
+1.  Double-click *Solarwinds – Device DVT* to open the custom parser in the
+    *Parser Editor*.
+
+2.  In the *Parser Editor*, update the *Parser Type* associated with the
+    *Solarwinds – Device DVT* to the following:
+
+>   **Parser Type:** *API, Solarwinds*
+
+1.  Click the Save icon in the upper-right corner of the screen, then close the
+    browser tab.
+
+2.  Repeat steps 13-15 for the remaining two NetBrain Solarwinds parsers.
+
+Creating Solarwinds Enabled Device Groups
+-----------------------------------------
+
+**Note:** If the environment has been deployed with multiple Front Servers,
+repeat this section for each of the Front Servers.
+
+1.  Navigate to the NetBrain *Device Group Manager.*
+
+    *Start Menu (The Four Dashed Lines) \> Device Group*
+
+2.  In the *Device Group Manager*, right-click the “Public” folder, then click
+    “New Device Group”.
+
+3.  In the *Device Group Properties* dialog, Name the device group as follows:
+
+>   *[Solarwinds] DG \<Front Server Hostname\>*
+
+1.  Under *Devices and Interfaces*, click “+Dynamic Search”, then “Dynamic
+    Search Device”.
+
+2.  In the *Dynamic Search Device* dialog,
+
+    **Search Scope:** *All Devices (default)*
+
+    **Device Criteria:** *Front Server \| Matches \| \<Front Server\>*
+
+    where *\<Front Server\>* is the front server specified in step 3.
+
+3.  Click “Search” to populate the device list to front server mapping.
+
+4.  Click “OK” button to create a *Dynamic Search* association.
+
+5.  In the *Device Group Properties* dialog, click “OK” to complete Device Group
+    creation.
+
+6.  In the *Device Group Manager*, right-click the *[Solarwinds] \<Front Server
+    Hostname\>* object, then click “Open Group Map”.
+
+7.  In the resulting NetBrain device group map, right-click any device, then
+    click “Shared Device Settings”.
+
+8.  In the *Shared Device Settings…* dialog, click the select the API tab then
+    populate the dropdown fields as follows:
+
+    *Solarwinds API Adaptor \| Solarwinds API Server \<Front Server\> \|
+    \<Select Front Server\>*
+
+9.  Check “Apply above Settings to device group”, then select *[Solarwinds] DG
+    \<Front Server Hostname\>*
+
+10. In the API tab content table, check *Solarwinds API Adaptor*
+
+11. Click “Submit”.
+
+12. Repeat steps 1-14 for each additional deployed Front Server.
+
+Visualizing the Solarwinds Data with NetBrain Data View Template
+================================================================
+
+On-Demand Data Overlay
+----------------------
+
+1.  From the NetBrain Desktop Management UI, open the desired map to overlay
+    Solarwinds data.
+
+2.  In *Dynamic Data View* tab, search for “[Solarwinds] Monitoring Data”.
+
+3.  In the *Preview – Data View Template* dialog, click “Apply”
+
+4.  On the NetBrain map, confirm that the *Cache/Live* data source switch is set
+    to *Live.*
+
+5.  Confirm that the objects (devices and interfaces) are properly instrumented
+    with the expected Solarwinds data.
+
+    **Note:** Overlay of the Solarwinds data may take seconds-to-minutes to
+    complete refresh depending on the number of devices on the map.
+
+Schedule Data Import from Solarwinds
 ------------------------------------
 
-1.  Login NetBrain Desktop.
+1.  In the *NetBrain Domain Management* page, navigate to *Schedule Task*.
 
-2.  Create Device Group based on managed FS/FSG.
+2.  Click on “Schedule Data View Template/Parser”, then click on “Add Task”
 
-3.  Map one device to a map.
+3.  In the *Add Task* dialog, specify the frequency for which to import device
+    and interface data from Solarwinds.
 
-4.  Right click the device and select “Shared Device Settings”.
+4.  Click on “Device Scope” tab, then click “Device Group” radio button. Add
+    each device group created as part of the integration to limit device scope
+    of the available devices.
 
-5.  Click on API tab.
+5.  Click on “Select Data View Template/Parser” tab, click on “Add” and search
+    for *[Solarwinds] Monitoring Data*
 
-6.  From API Plugin section, find API Source Type “Solarwinds API Adapter”.
+6.  Click “Submit” to create the scheduled task for Solarwinds data import to
+    NetBrain.
 
-7.  Select “Solarwinds” as the External API Servers.
+>   **Note:** The Solarwinds data will not be available on the map until after
+>   the first time that the scheduled task has completed execution.
 
-8.  Check “Apply above Settings to device group”.
+Troubleshooting
+===============
 
-9.  Check Solarwinds API Adapter row in API Plugin section of API tab.
-
-10. Select the Device Group created in Step 2.
-
-11. Click Submit button to save.
-
-How to run this Data View Template
-==================================
-
-On demand
----------
-
-1.  Map devices onto a map.
-
-2.  Search for “[Solarwinds] Monitoring Data”.
-
-3.  Click it.
-
-4.  Click Apply button.
-
-5.  Make sure it runs live, not cache.
-
-6.  Review the Data View result from map.
-
-Scheduled
----------
-
-1.  Schedule the DVT from Domain Management Schedule Task.
-
-2.  After it first time execution, check DVT result from map.
-
-Support & Services
-==================
-
-If there is any problems during deployment, contact NetBrain Support at
+If there are any problems encountered during deployment or integration of
+NetBrain with Solarwinds, contact NetBrain Support at
 *support\@netbraintech.com*.
