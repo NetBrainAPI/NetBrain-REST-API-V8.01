@@ -1,7 +1,8 @@
----
-subtitle: Single Pane of Glass – Solarwinds Device Monitoring
-title: NetBrain Integration Deployment Guide
----
+NetBrain Integration Deployment Guide
+=====================================
+
+Single Pane of Glass – Solarwinds Device Monitoring
+------------------------------------------------------------
 
 Use Case
 ========
@@ -15,13 +16,22 @@ that enables a NetBrain administrator to overlay the Solarwinds device and
 interface monitoring data on user created maps.
 
 With this integration, NetBrain can overlay the following extended information
-as attributes:
+as attributes.
+Device level:
+1.  CPU Load% (Map URL to Solarwinds device details)
+2.  Memory Used %
+3.  System Uptime
+4.  SysLog messages
 
-| Object Type | Available Value(s)                                                                                                                          |
-|-------------|---------------------------------------------------------------------------------------------------------------------------------------------|
-| Device      | CPU Load %                                                                                                                                  |
-|             | Device URL in Solarwinds Memory Used % System Uptime SysLog Messages                                                                        |
-| Interface   | Utilization In % Utilization Out % In Discards This Hour Out Discards This Hour In Errors Today Out Errors Today CRC Align Errors Today MTU |
+Following data is seen on the interface level:
+1.  Utilization In %
+2.  Utilization Out %
+3.  In Discards This Hour
+4.  Out Discards This Hour
+5.  In Errors This Today
+6.  Out Errors This Today
+7.  CRC Align Errors Today
+8.  MTU
 
 NetBrain Map with Solarwinds Data Overlay
 -----------------------------------------
