@@ -163,11 +163,11 @@ repeat this section for each of the Front Servers.
     of a successful connectivity test followed by two typical failure scenarios:
     Incorrect credentials and connectivity between NetBrain and Solarwinds.
 
-| **Successful Connection**                                                                                                                                                                                        | [./media/image3.png](./media/image3.png) |
+| **Successful Connection**                                                                                                                                                                                        | ![](media/image3.png) |
 |------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|------------------------------------------|
-| **Error Scenario:** Solarwinds Orion SDK library isn’t available to by imported by NetBrain’s Plugin **Possible Resolution:**                                                                                    | [./media/image4.png](./media/image4.png) |
-| **Error Scenario:** The entered credentials are incorrect. **Possible Resolution:** Confirm credentials specified in the Solarwinds API Adaptor configuration and retry.                                         | [./media/image5.png](./media/image5.png) |
-| **Error Scenario:** Solarwinds endpoint is unreachable. **Possible Resolution:** Confirm that the NetBrain Front Server(s) can reach the Solarwinds platform using 3rd party tools (Ping, Traceroute, Wireshark) | [./media/image6.png](./media/image6.png) |
+| **Error Scenario:** Solarwinds Orion SDK library isn’t available to by imported by NetBrain’s Plugin **Possible Resolution:**                                                                                    | ![](media/image4.png) |
+| **Error Scenario:** The entered credentials are incorrect. **Possible Resolution:** Confirm credentials specified in the Solarwinds API Adaptor configuration and retry.                                         | ![](media/image5.png) |
+| **Error Scenario:** Solarwinds endpoint is unreachable. **Possible Resolution:** Confirm that the NetBrain Front Server(s) can reach the Solarwinds platform using 3rd party tools (Ping, Traceroute, Wireshark) | ![](media/image6.png) |
 
 ### Confirm all steps are followed in section *Deploy the Solarwinds Orion SDK*.
 
