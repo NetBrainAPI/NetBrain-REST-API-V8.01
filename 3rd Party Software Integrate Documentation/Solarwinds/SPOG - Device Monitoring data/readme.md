@@ -163,6 +163,15 @@ repeat this section for each of the Front Servers.
     of a successful connectivity test followed by two typical failure scenarios:
     Incorrect credentials and connectivity between NetBrain and Solarwinds.
 
+<style>
+table th:first-of-type {
+    width: 50%;
+}
+table th:nth-of-type(2) {
+    width: 50%;
+}
+</style>
+
 | **Successful Connection**  |![](media/image3.png)                                        |
 |----------------------------|-------------------------------------------------------------|
 | **Error Scenario:** Solarwinds Orion SDK library isn’t available to by imported by NetBrain’s Plugin <br> **Possible Resolution:**   Confirm all steps are followed in section Deploy the Solarwinds Orion SDK.                                                                                 | ![](media/image4.png) |
