@@ -1,4 +1,4 @@
-\# User API Design
+# User API Design
 
 GET /V1/CMDB/Users{?username}&{?authenticationServer}
 -----------------------------------------------------
