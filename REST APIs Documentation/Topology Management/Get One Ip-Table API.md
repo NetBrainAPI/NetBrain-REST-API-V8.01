@@ -34,9 +34,14 @@ If user set "IP = null" or " IP = "" " but provide the input values of "beginInd
 |**Name**|**Type**|**Description**|
 |------|------|------|
 |<img width=100/>|<img width=100/>|<img width=500/>|
-| Ip* | string  | The ip address of current device. |
+| ip | string  | The ip address of current device.If user provide an input value of "ip" attribute, then this API will return all items which have the same ip address in One-IP Table; |
+|lan|string|The LAN Segment of the IP address.If user provide an input value of “lan” attribute, then this API will return all items which have the same LAN segement in One-IP Table;|
+|mac|string|The MAC address related to the IP address.If user provide an input value of “mac” attribute, then this API will return all items which have the same mac address in One-IP Table;|
+|switch_name|string|The switch name connected to the end system.If user provide an input value of “switch_name” attribute, then this API will return all items which have the same switch name in One-IP Table;|
+|switch_port|string|The [fullname](https://www.netbraintech.com/docs/ie71/help/index.html?interface-name-translation.htm) of switchport to connected to end system or the device interface configured with this IP address. This is not a independent attribute, to use this attribute, 'switch_name' is necessary.|
+|dns|string|The resolved DNS name of the end system, or the combination of the device name and interface name. If the DNS name is not resolved, it is null.|
 | beginIndex* | int  | Begin index of data, API will return OneIP Table items start from "beginIndex". |
-| count* | int  | Count number of returned data, API will return OneIP Table items, the total number of items is the value of "count". Maximum "count" value is 1000. So API will only return 1000 itmes even users set the input value of "count" greater than 1000. If the total number of items which start from "beginIndex" to the end of table are less than "count" value, API will return the rest of items.<br> ***Note:*** If customer insert the beginindex as 1 and count as 1002 which meands the total number will greater than 1000. Then customer would get an error and without any result returned. | |
+| count* | int  | Count number of returned data, API will return OneIP Table items, the total number of items is the value of "count". Maximum "count" value is 1000. So API will only return 1000 itmes even users set the input value of "count" greater than 1000. If the total number of items which start from "beginIndex" to the end of table are less than "count" value, API will return the rest of items.<br> ***Note:*** If customer insert the beginindex as 1 and count as 1002 which meands the total number will greater than 1000. Then customer would get an error and without any result returned. |
 
 ## Headers
 
