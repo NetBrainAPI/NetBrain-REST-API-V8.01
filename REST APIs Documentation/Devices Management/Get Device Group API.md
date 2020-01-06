@@ -54,7 +54,7 @@ Call this API to get all device groups in current domain, include Public group, 
 |statusDescription| string | The explanation of the status code. |
 |id| string | The ID of the device group. |
 |name| string | The Name of the device group. |
-|type | integer | The type of device group<br>0: Public group<br>1: Private group<br>2: System group|
+|type | integer | The type of device group<br>0: Public group<br>1: Private group<br>2: System group<br>4: Policy device group|
 
 > ***Example***
 
