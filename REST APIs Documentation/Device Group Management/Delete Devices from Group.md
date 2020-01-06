@@ -101,7 +101,7 @@ data = {
 }
 
 try:
-    response = requests.post(full_url, data = json.dumps(data), headers = headers, verify = False)
+    response = requests.delete(full_url, data = json.dumps(data), headers = headers, verify = False)
     if response.status_code == 200:
         result = response.json()
         print (result)
