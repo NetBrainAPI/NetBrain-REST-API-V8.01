@@ -7,7 +7,7 @@ To view details about use cases which can be implemented with NetBrain REST APIs
 To see the list of all REST APIs view "REST APIs Documentation".<br>
 
 ## New APIs in this version
-1) [Get the connected switch ports of an end system API](https://github.com/NetBrainAPI/NetBrain-REST-API-V8.0/blob/master/REST%20APIs%20Documentation/Devices%20Management/Get%20the%20connected%20switch%20ports%20of%20an%20end%20system%20API.md)<br>
+1) [Get the connected switch ports of an end system API](https://github.com/NetBrainAPI/NetBrain-REST-API-V8.01/blob/master/REST%20APIs%20Documentation/Devices%20Management/Get%20the%20connected%20switch%20ports%20of%20an%20end%20system%20API.md)<br>
 2) [Get Connected Switch Port API](https://github.com/NetBrainAPI/NetBrain-REST-API-V8.01/blob/master/REST%20APIs%20Documentation/Topology%20Management/Get%20Connected%20Switch%20Port%20API.md)<br>
 3) [Add Device Group API](https://github.com/NetBrainAPI/NetBrain-REST-API-V8.01/blob/master/REST%20APIs%20Documentation/Device%20Group%20Management/Add%20Device%20Group.md)<br>
 4) [Add devices to Device Group API](https://github.com/NetBrainAPI/NetBrain-REST-API-V8.01/blob/master/REST%20APIs%20Documentation/Device%20Group%20Management/Add%20Devices%20to%20Group.md)<br>
