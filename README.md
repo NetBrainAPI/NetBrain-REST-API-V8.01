@@ -189,3 +189,8 @@ To see the list of all REST APIs view "REST APIs Documentation".<br>
 ### [Change Ticket Management](https://github.com/NetBrainAPI/NetBrain-REST-API-V8.01/tree/master/REST%20APIs%20Documentation/Change%20Management)
 1) [Binding 3rd Party Ticket with Runbook API](https://github.com/NetBrainAPI/NetBrain-REST-API-V8.01/blob/master/REST%20APIs%20Documentation/Change%20Management/_Change%20Management%20Approval%20Process%20API%20Design%20--%20Binding%20Runbook.md)<br>
 2) [Approve Change Management Request API](https://github.com/NetBrainAPI/NetBrain-REST-API-V8.01/blob/master/REST%20APIs%20Documentation/Change%20Management/_Change%20Management%20Approval%20Process%20API%20Design%20--%20Change%20state.md)<br>
+
+### [Tune Devices Access](https://github.com/NetBrainAPI/NetBrain-REST-API-V8.01/tree/master/REST%20APIs%20Documentation/Tune%20Devices%20Access%20API%20Design)
+1) [Create Tune Devices Access Task ID API](https://github.com/NetBrainAPI/NetBrain-REST-API-V8.01/blob/master/REST%20APIs%20Documentation/Tune%20Devices%20Access%20API%20Design/Create%20Tune%20Devices%20Access%20Task%20ID%20API.md)<br>
+2) [Get Tune Devices Access Task Result API](https://github.com/NetBrainAPI/NetBrain-REST-API-V8.01/blob/master/REST%20APIs%20Documentation/Tune%20Devices%20Access%20API%20Design/Get%20tune%20device%20access%20task%20result%20API.md)
+
