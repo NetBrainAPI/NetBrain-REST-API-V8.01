@@ -1,7 +1,8 @@
----
-subtitle: Single Pane of Glass – Solarwinds Device Monitoring
-title: NetBrain Integration Deployment Guide
----
+NetBrain Integration Deployment Guide
+=====================================
+
+Single Pane of Glass – Solarwinds Device Monitoring
+------------------------------------------------------------
 
 Overview
 ========
@@ -17,11 +18,21 @@ interface monitoring data on user created maps.
 With this integration, NetBrain can overlay the following extended information
 as attributes:
 
-| Object Type | Available Value(s)                                                                                                                          |
-|-------------|---------------------------------------------------------------------------------------------------------------------------------------------|
-| Device      | CPU Load %                                                                                                                                  |
-|             | Device URL in Solarwinds Memory Used % System Uptime SysLog Messages                                                                        |
-| Interface   | Utilization In % Utilization Out % In Discards This Hour Out Discards This Hour In Errors Today Out Errors Today CRC Align Errors Today MTU |
+Device level:
+1.  CPU Load% (Map URL to Solarwinds device details)
+2.  Memory Used %
+3.  System Uptime
+4.  SysLog messages
+
+Following data is seen on the interface level:
+1.  Utilization In %
+2.  Utilization Out %
+3.  In Discards This Hour
+4.  Out Discards This Hour
+5.  In Errors This Today
+6.  Out Errors This Today
+7.  CRC Align Errors Today
+8.  MTU
 
 NetBrain Map with Solarwinds Data Overlay
 -----------------------------------------
@@ -150,11 +161,11 @@ repeat this section for each of the Front Servers.
     of a successful connectivity test followed by two typical failure scenarios:
     Incorrect credentials and connectivity between NetBrain and Solarwinds.
 
-| **Successful Connection**                                                                                                                                                                                        | [./media/image3.png](./media/image3.png) |
+| **Successful Connection**                                                                                                                                                                                        | ![](media/image3.png)
 |------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|------------------------------------------|
-| **Error Scenario:** Solarwinds Orion SDK library isn’t available to by imported by NetBrain’s Plugin **Possible Resolution:**                                                                                    | [./media/image4.png](./media/image4.png) |
-| **Error Scenario:** The entered credentials are incorrect. **Possible Resolution:** Confirm credentials specified in the Solarwinds API Adaptor configuration and retry.                                         | [./media/image5.png](./media/image5.png) |
-| **Error Scenario:** Solarwinds endpoint is unreachable. **Possible Resolution:** Confirm that the NetBrain Front Server(s) can reach the Solarwinds platform using 3rd party tools (Ping, Traceroute, Wireshark) | [./media/image6.png](./media/image6.png) |
+| **Error Scenario:** Solarwinds Orion SDK library isn’t available to by imported by NetBrain’s Plugin **Possible Resolution:**                                                                                    | ![](media/image4.png) |
+| **Error Scenario:** The entered credentials are incorrect. **Possible Resolution:** Confirm credentials specified in the Solarwinds API Adaptor configuration and retry.                                         | ![](media/image5.png) |
+| **Error Scenario:** Solarwinds endpoint is unreachable. **Possible Resolution:** Confirm that the NetBrain Front Server(s) can reach the Solarwinds platform using 3rd party tools (Ping, Traceroute, Wireshark) | ![](media/image6.png) |
 
 ### Confirm all steps are followed in section *Deploy the Solarwinds Orion SDK*.
 
