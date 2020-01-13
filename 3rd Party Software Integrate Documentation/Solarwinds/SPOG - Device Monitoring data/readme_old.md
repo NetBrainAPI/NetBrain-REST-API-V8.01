@@ -216,7 +216,7 @@ table th:nth-of-type(2) {
 9.  Confirm that the *Import Data View Template* dialog screen reflects the
     following information:
 
-    **Name:** *[Solarwinds] Device Monitoring Data.xdvt*
+    **Name:** *[Solarwinds] Device, Interface and Syslog Monitoring Data.xdvt*
 
     **Size:** *12.32k*
 
