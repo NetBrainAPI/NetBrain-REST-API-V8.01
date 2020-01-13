@@ -65,7 +65,7 @@ Call this API to get the running result of specified ip addresses for a discover
 |statusCode| integer | The returned status code of executing the API.  |
 |statusDescription| string | The explanation of the status code.  |
 |devices| list | A list of discovered devices. |
-|devices.mgmIP| string | Management ip of the device. |
+|devices.mgmtIP| string | Management ip of the device. |
 |devices.domainId| string | The ID of the domain that a device belongs to. |
 |devices.source| string | The IP from which a device was discovered. |
 |devices.hostname| string | The hostname of a device. |
