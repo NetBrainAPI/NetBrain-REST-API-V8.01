@@ -299,7 +299,7 @@ body = {
 |mapId| string | The ID of the map which users triggered from third party sofware.  |
 |mapName| string | The name of the map. |
 |mapType| string | Create Map Mode.<br>0: Map Device and Its Neighbors.<br>1: Open Site Map of the Device.<br>2: Open Existing Map.<br>3: Map a Path.<br>4: Create an Empty Map.  |
-|mapUrl| string | The URL link of the map triggered by users.  |
+|mapUrl| string | The URL segment which navigates to the map file. This URL segment should be preceeded by the server name (Example "http://192.168.28.79/")  |
 |statusCode| integer | The returned status code of executing the API.  |
 |statusDescription| string | The explanation of the status code.  |
 
@@ -311,7 +311,7 @@ body = {
     'mapId': '13304db4-6c28-401a-b546-5920b0db7750',
     'mapName': 'stubTest1-20190208211759',
     'mapType': 1,
-    'mapUrl': 'http://192.168.28.79/map.html?t=fb24f3f0-81a7-1929-4b8f-99106c23fa5b&d=0201adc4-ae96-46f0-ae3d-01cdba9e41d6&id=13304db4-6c28-401a-b546-5920b0db7750&maptype=1'
+    'mapUrl': 'map.html?t=fb24f3f0-81a7-1929-4b8f-99106c23fa5b&d=0201adc4-ae96-46f0-ae3d-01cdba9e41d6&id=13304db4-6c28-401a-b546-5920b0db7750&maptype=1'
 }
 ```
 
@@ -415,7 +415,7 @@ result
     {'mapId': '13304db4-6c28-401a-b546-5920b0db7750',
      'mapName': 'stubTest1-20190208211759',
      'mapType': 1,
-     'mapUrl': 'http://192.168.28.79/map.html?t=fb24f3f0-81a7-1929-4b8f-99106c23fa5b&d=0201adc4-ae96-46f0-ae3d-01cdba9e41d6&id=13304db4-6c28-401a-b546-5920b0db7750&maptype=1'}
+     'mapUrl': 'map.html?t=fb24f3f0-81a7-1929-4b8f-99106c23fa5b&d=0201adc4-ae96-46f0-ae3d-01cdba9e41d6&id=13304db4-6c28-401a-b546-5920b0db7750&maptype=1'}
 
 
 
@@ -564,7 +564,7 @@ Response:
             'mapId': 'c34bd4ff-e260-4366-844c-9389ee77fcb1',
             'mapName': 'stubTest1-20190211144514',
             'mapType': 1,
-            'mapUrl': 'http://192.168.28.79/map.html?t=fb24f3f0-81a7-1929-4b8f-99106c23fa5b&d=0201adc4-ae96-46f0-ae3d-01cdba9e41d6&id=c34bd4ff-e260-4366-844c-9389ee77fcb1&maptype=1'
+            'mapUrl': 'map.html?t=fb24f3f0-81a7-1929-4b8f-99106c23fa5b&d=0201adc4-ae96-46f0-ae3d-01cdba9e41d6&id=c34bd4ff-e260-4366-844c-9389ee77fcb1&maptype=1'
         }
         
 ###################################################################################################################    
@@ -602,7 +602,7 @@ Response:
             'mapId': 'c34bd4ff-e260-4366-844c-f2eb6e6f94b3',
             'mapName': 'stubTest1-20190211144514',
             'mapType': 1,
-            'mapUrl': 'http://192.168.28.79/map.html?t=fb24f3f0-81a7-1929-4b8f-99106c23fa5b&d=0201adc4-ae96-46f0-ae3d-01cdba9e41d6&id=c34bd4ff-e260-5777-399c-7700ee77fcb1&maptype=1'
+            'mapUrl': 'map.html?t=fb24f3f0-81a7-1929-4b8f-99106c23fa5b&d=0201adc4-ae96-46f0-ae3d-01cdba9e41d6&id=c34bd4ff-e260-5777-399c-7700ee77fcb1&maptype=1'
         }
         
         
@@ -643,7 +643,7 @@ Response:
             'mapId': 'cf08cafc-a25f-4ba8-be92-f2eb6e6f94b3',
             'mapName': 'stubTest1-20190211142723',
             'mapType': 1,
-            'mapUrl': 'http://192.168.28.79/map.html?t=fb24f3f0-81a7-1929-4b8f-99106c23fa5b&d=0201adc4-ae96-46f0-ae3d-01cdba9e41d6&id=cf08cafc-a25f-4ba8-be92-f2eb6e6f94b3&maptype=1'
+            'mapUrl': 'map.html?t=fb24f3f0-81a7-1929-4b8f-99106c23fa5b&d=0201adc4-ae96-46f0-ae3d-01cdba9e41d6&id=cf08cafc-a25f-4ba8-be92-f2eb6e6f94b3&maptype=1'
         }
         
 ###################################################################################################################    
@@ -715,7 +715,7 @@ Response:
             'mapId': 'c7443ef6-bbe2-486f-a029-f0830d0f11b5',
             'mapName': 'stubTest1-20190211161535',
             'mapType': 1,
-            'mapUrl': 'http://192.168.28.79/map.html?t=fb24f3f0-81a7-1929-4b8f-99106c23fa5b&d=0201adc4-ae96-46f0-ae3d-01cdba9e41d6&id=c7443ef6-bbe2-486f-a029-f0830d0f11b5&maptype=1',
+            'mapUrl': 'map.html?t=fb24f3f0-81a7-1929-4b8f-99106c23fa5b&d=0201adc4-ae96-46f0-ae3d-01cdba9e41d6&id=c7443ef6-bbe2-486f-a029-f0830d0f11b5&maptype=1',
             'taskId': 'ef07f195-31ae-490b-9aa7-58533b889ea2'
         }
         
