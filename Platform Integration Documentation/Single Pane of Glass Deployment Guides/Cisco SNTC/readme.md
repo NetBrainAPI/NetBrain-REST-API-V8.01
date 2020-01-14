@@ -286,7 +286,7 @@ Schedule Data Import from Cisco SNTC
 2.  Click on “Schedule Data View Template/Parser”, then click on “Add Task”
 
 3.  In the *Add Task* dialog, specify the frequency for which to import device
-    and interface data from Solarwinds.
+    and interface data from Cisco SNTC.
 
 4.  Click on “Device Scope” tab, then click “Device Group” radio button. Add
     each device group created as part of the integration to limit device scope
@@ -295,7 +295,7 @@ Schedule Data Import from Cisco SNTC
 5.  Click on “Select Data View Template/Parser” tab, click on “Add” and search
     for *[Cisco SNTC] Monitoring Data*
 
-6.  Click “Submit” to create the scheduled task for Solarwinds data import to
+6.  Click “Submit” to create the scheduled task for Cisco SNTC data import to
     NetBrain.
 
 >   **Note:** The Cisco SNTC data will not be available on the map until after
@@ -305,6 +305,6 @@ Troubleshooting
 ===============
 
 If there are any problems encountered during deployment or integration of
-NetBrain with Solarwinds, contact NetBrain Support at
+NetBrain with Cisco SNTC, contact NetBrain Support at
 *support\@netbraintech.com*.
 
