@@ -138,7 +138,7 @@ repeat this section for each of the Front Servers.
  Import Cisco SNTC Data View Template
 -------------------------------------
 
-1.  Download the NetBrain Cisco SNTC Dataview Template, [Cisco SNTC]() Monitoring
+1.  Download the NetBrain Cisco SNTC Dataview Template, *[Cisco SNTC] Monitoring
     Data.xdvt*, from the NetBrain github and stage locally on the machine used
     to connect to the NetBrain User Interface.
 
