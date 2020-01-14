@@ -29,8 +29,8 @@ NetBrain Map with SNTC Cloud Service Data Overlay
 Below example representations of the integration work flow and SNTC cloud data overlay on devices.
 
 ![](media/workFlow.jpg)
-![](media/map.jpg)
 
+<img src="media/map.JPG" />
 
 Pre-requisites
 ==============
@@ -129,24 +129,16 @@ repeat this section for each of the Front Servers.
     of a successful connectivity test followed by two typical failure scenarios:
     Incorrect credentials and connectivity between NetBrain and Cisco SNTC Inventory cloud.
 
-<style>
-table th:first-of-type {
-    width: 50%;
-}
-table th:nth-of-type(2) {
-    width: 50%;
-}
-</style>
 
-| **Successful Connection**  |![](media/success.png)                                        |
+| **Successful Connection**  |<img src="media/success.JPG" />                                    |
 |----------------------------|-------------------------------------------------------------|
-| **Error Scenario:** The entered credentials are incorrect. **Possible Resolution:** Confirm credentials specified in the Cisco SNTC API Adaptor configuration and retry.                                         | ![](media/clientCredential.png) |
-| **Error Scenario:** Cisco SNTC cloud endpoint is unreachable. **Possible Resolution:** Confirm that the NetBrain Front Server(s) can reach the Cisco SNTC platform using 3rd party tools (Ping, Traceroute, Wireshark). Or confirm your endpoint inserted correctly.  | ![](media/endpointFail.png) |
+| **Error Scenario:** The entered credentials are incorrect. **Possible Resolution:** Confirm credentials specified in the Cisco SNTC API Adaptor configuration and retry.                                         |<img src="media/clientCredential.JPG" /> |
+| **Error Scenario:** Cisco SNTC cloud endpoint is unreachable. **Possible Resolution:** Confirm that the NetBrain Front Server(s) can reach the Cisco SNTC platform using 3rd party tools (Ping, Traceroute, Wireshark). Or confirm your endpoint inserted correctly.  |<img src="media/endpointFail.JPG" /> |
 
  Import Cisco SNTC Data View Template
 -------------------------------------
 
-1.  Download the NetBrain Cisco SNTC Dataview Template, [Cisco SNTC]() Monitoring
+1.  Download the NetBrain Cisco SNTC Dataview Template, *[Cisco SNTC] Monitoring
     Data.xdvt*, from the NetBrain github and stage locally on the machine used
     to connect to the NetBrain User Interface.
 
