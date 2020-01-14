@@ -165,7 +165,7 @@ repeat this section for each of the Front Servers.
 
     **Name:** *[Cisco SNTC] Monitoring Data.xdvt*
 
-    **Size:** *12.32k*
+    **Size:** *8.00k*
 
     **Status:** *Ready*
 
