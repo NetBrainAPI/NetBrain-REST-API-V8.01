@@ -119,10 +119,10 @@ repeat this section for each of the Front Servers.
 >   **Password:** *Cisco SNTC password*
 
 >   **Front Server/Front Server Group:** Select FS/FSG which would have
->   reachability to Solarwinds server
+>   reachability to Cisco SNTC cloud server
 
 1.  Click “Test” to initiate a connectivity test between the NetBrain front
-    server and the Solarwinds instance configured. Pictured below is the result
+    server and the Cisco SNTC instance configured. Pictured below is the result
     of a successful connectivity test followed by two typical failure scenarios:
     Incorrect credentials and connectivity between NetBrain and Cisco SNTC Inventory cloud.
 
