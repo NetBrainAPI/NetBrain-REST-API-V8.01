@@ -30,8 +30,7 @@ Below example representations of the integration work flow and SNTC cloud data o
 
 ![](media/workFlow.jpg)
 
-![](media/map.jpg)
-
+<img src="media/map.JPG" />
 
 Pre-requisites
 ==============
