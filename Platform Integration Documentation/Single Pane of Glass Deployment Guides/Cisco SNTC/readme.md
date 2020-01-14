@@ -2,7 +2,7 @@
 NetBrain Integration Deployment Guide
 =====================================
 
-Single Pane of Glass – Solarwinds Device Monitoring
+Single Pane of Glass – Cisco SNTC Device Monitoring
 ------------------------------------------------------------
 
 Use Case
