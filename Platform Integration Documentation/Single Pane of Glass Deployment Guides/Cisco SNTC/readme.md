@@ -29,6 +29,7 @@ NetBrain Map with SNTC Cloud Service Data Overlay
 Below example representations of the integration work flow and SNTC cloud data overlay on devices.
 
 ![](media/workFlow.jpg)
+
 ![](media/map.jpg)
 
 
@@ -129,19 +130,11 @@ repeat this section for each of the Front Servers.
     of a successful connectivity test followed by two typical failure scenarios:
     Incorrect credentials and connectivity between NetBrain and Cisco SNTC Inventory cloud.
 
-<style>
-table th:first-of-type {
-    width: 50%;
-}
-table th:nth-of-type(2) {
-    width: 50%;
-}
-</style>
 
-| **Successful Connection**  |![](media/success.png)                                        |
+| **Successful Connection**  |![](media/success.jpg)                                       |
 |----------------------------|-------------------------------------------------------------|
-| **Error Scenario:** The entered credentials are incorrect. **Possible Resolution:** Confirm credentials specified in the Cisco SNTC API Adaptor configuration and retry.                                         | ![](media/clientCredential.png) |
-| **Error Scenario:** Cisco SNTC cloud endpoint is unreachable. **Possible Resolution:** Confirm that the NetBrain Front Server(s) can reach the Cisco SNTC platform using 3rd party tools (Ping, Traceroute, Wireshark). Or confirm your endpoint inserted correctly.  | ![](media/endpointFail.png) |
+| **Error Scenario:** The entered credentials are incorrect. **Possible Resolution:** Confirm credentials specified in the Cisco SNTC API Adaptor configuration and retry.                                         | ![](media/clientCredential.jpg) |
+| **Error Scenario:** Cisco SNTC cloud endpoint is unreachable. **Possible Resolution:** Confirm that the NetBrain Front Server(s) can reach the Cisco SNTC platform using 3rd party tools (Ping, Traceroute, Wireshark). Or confirm your endpoint inserted correctly.  | ![](media/endpointFail.jpg) |
 
  Import Cisco SNTC Data View Template
 -------------------------------------
