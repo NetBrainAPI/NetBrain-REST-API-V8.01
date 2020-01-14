@@ -28,8 +28,6 @@ NetBrain Map with SNTC Cloud Service Data Overlay
 
 Below example representations of the integration work flow and SNTC cloud data overlay on devices.
 
-![](media/workFlow.jpg)
-
 <img src="media/map.JPG" />
 
 Pre-requisites
@@ -41,7 +39,6 @@ Application Version
 | Application                 | Version                   |
 |-----------------------------|---------------------------|
 | NetBrain Integrated Edition | IEv8.0 (or newer)         |
-| SNTC service                | current available         |
 
 Network Connectivity
 --------------------
@@ -281,7 +278,7 @@ On-Demand Data Overlay
     **Note:** Overlay of the Cisco SNTC data may take seconds-to-minutes to
     complete refresh depending on the number of devices on the map.
 
-Schedule Data Import from Solarwinds
+Schedule Data Import from Cisco SNTC
 ------------------------------------
 
 1.  In the *NetBrain Domain Management* page, navigate to *Schedule Task*.
