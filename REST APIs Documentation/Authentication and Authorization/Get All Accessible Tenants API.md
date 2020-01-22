@@ -115,10 +115,8 @@ except Exception as e: return (str(e))
 
 
 ```python
-curl -X GET \
-  'http://192.168.28.79/ServicesAPI/API/V1/CMDB/Tenants?token=c00de805-9210-44a9-9a26-f0c1e944ea36' \
-  -H 'Postman-Token: b3ecf2c4-d94a-4059-a01f-bcd21fc8a286' \
-  -H 'cache-control: no-cache'
+curl --location --request GET 'https://integrationlab.netbraintech.com/ServicesAPI/API/V1/CMDB/Tenants' \
+--header 'token: 6a2ad6ac-c048-4794-859a-321a407f3e3f'
 ```
 
 ## Error Example : 
