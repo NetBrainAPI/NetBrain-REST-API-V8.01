@@ -7,7 +7,7 @@ This API call is used to get the corresponding device by an IP address or device
 If none of hostname and ip provided, response will return all devices of current domain.<br>
 
 ***Note：Known-Issue*** 
-> One of these two attributes: ***hostname*** and ***ip*** must be provided when customer call this API. But value can be empty.
+> One of these two attributes: ***hostname*** and ***ip*** must be provided when calling this API. But value can be empty.
 
 > ***Example***
 
