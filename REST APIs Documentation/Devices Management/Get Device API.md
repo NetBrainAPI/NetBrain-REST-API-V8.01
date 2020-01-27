@@ -1,7 +1,7 @@
 
 # Device API Design
 
-## ***GET*** /V1/CMDB/Devices/{?hostname}/{?ip}
+## ***GET*** /V1/CMDB/Devices
 This API call is used to get the corresponding device by an IP address or device name. For duplicate IP addresses, this API returns a device list.
 
 If none of hostname and ip provided, response will return all devices of current domain.
