@@ -33,6 +33,18 @@ If none of hostname and ip provided, response will return all devices of current
 |<img width=100/>|<img width=100/>|<img width=500/>|
 | hostname | string  | The host name of device. |
 | ip | string  | The management ip of device. |
+***Note：*** One of these two attribute must be provided when customer call this API. But value can be empty.
+
+> ***Example***
+
+```python
+# Successful response weithout hostname and ip inputs
+params = {
+"hostname": ""
+#or
+# "ip" : ""
+}
+```
 
 ## Headers
 
