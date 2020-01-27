@@ -56,12 +56,10 @@ Call this API to get all devices in the device group within the group name provi
 |statusCode| integer | Code issued by NetBrain server indicating the execution result.  |
 |statusDescription| string | The explanation of the status code. |
 |devices| string[] | A list of devices. |
-|devices.devicesID| string | The device ID. |
-|devices.deviceTypeName| string | The type of the returned device, such as Cisco Router. |
+|devices.id | string | The device ID. |
 |devices.mgmtIP| string | The management IP address of the returned device. |
 |devices.hostname| string | The hostname of returned device. |
-|devices.firstDiscoverTime| DateTime | the time that the device was first discovered |
-|devices.lastDiscoverTime| DateTime | the time that the device was lastdiscovered |
+
 
 > ***Example***
 
