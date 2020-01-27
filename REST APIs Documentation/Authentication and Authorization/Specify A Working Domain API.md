@@ -120,10 +120,14 @@ except Exception as e: print (str(e))
 
 
 ```python
-curl -X GET \
-  'http://192.168.28.79/ServicesAPI/API/V1/CMDB/Domains?token=c00de805-9210-44a9-9a26-f0c1e944ea36&tenantId=fb24f3f0-81a7-1929-4b8f-99106c23fa5b' \
-  -H 'Postman-Token: ee6dda7c-cbcc-43b8-8957-9c4f2d2a4b5b' \
-  -H 'cache-control: no-cache'
+curl --location --request PUT 'https://integrationLab.netbraintech.com/ServicesAPI/API/V1/Session/CurrentDomain' \
+--header 'Content-Type: application/json' \
+--header 'token: 6a2ad6ac-c048-4794-859a-321a407f3e3f' \
+--data-raw '{
+	"tenantId": "40e0032e-14e7-4fea-7d00-8fe8bd65efae",
+    "domainId": "b924c2f0-7210-43ba-9cdd-d1757ae23742"
+}
+'
 ```
 
  ## Error Examples:
