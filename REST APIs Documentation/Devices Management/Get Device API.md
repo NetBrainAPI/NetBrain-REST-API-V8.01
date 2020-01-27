@@ -40,10 +40,10 @@ If none of hostname and ip provided, response will return all devices of current
 ```python
 # Successful response weithout hostname and ip inputs
 params = {
-"hostname": ""
-#or
-# "ip" : ""
-}
+    "hostname": ""
+    #or
+    # "ip" : ""
+    }
 ```
 
 ## Headers
