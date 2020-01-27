@@ -38,7 +38,6 @@ If none of hostname and ip provided, response will return all devices of current
 > ***Example***
 
 ```python
-# Successful response weithout hostname and ip inputs
 params = {
     "hostname": ""
     #or
@@ -82,7 +81,7 @@ params = {
 
 
 ```python
-# Successful response weithout hostname and ip inputs
+# Successful response weithout hostname or ip inputs value as ""
 {
     "devices": [
         {
