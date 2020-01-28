@@ -162,6 +162,7 @@ To see the list of all REST APIs view "REST APIs Documentation".<br>
 4) [Get Device Neighbors by Topology Type API](https://github.com/NetBrainAPI/NetBrain-REST-API-V8.01/blob/master/REST%20APIs%20Documentation/Topology%20Management/Get%20Device%20Neighbors%20by%20Topology%20Type%20API.md)<br>
 5) [Get Topology Build Task Status API](https://github.com/NetBrainAPI/NetBrain-REST-API-V8.01/blob/master/REST%20APIs%20Documentation/Topology%20Management/Get%20Topology%20Build%20Task%20Status%20API.md)
 6) [Get One Ip Table API](https://github.com/NetBrainAPI/NetBrain-REST-API-V8.01/blob/master/REST%20APIs%20Documentation/Topology%20Management/Get%20One%20Ip-Table%20API.md)
+7) [Get Device Neighbors by Topology Type API Version_1](https://github.com/NetBrainAPI/NetBrain-REST-API-V8.01/blob/master/REST%20APIs%20Documentation/Topology%20Management/Get%20Device%20Neighbors%20by%20Topology%20Type%20API%20Version_1.md)
 
 ### [Trigger Diagnosis API](https://github.com/NetBrainAPI/NetBrain-REST-API-V8.01/blob/master/REST%20APIs%20Documentation/Trigger%20Diagnosis%20API/Trigger%20Diagnosis%20API%20V8%20(1).md)
 1) Map Device and Its Neighbors
