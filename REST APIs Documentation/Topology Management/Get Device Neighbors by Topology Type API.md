@@ -29,8 +29,14 @@ Use this API to get specific neighbors of a device according to the specified to
 |**Name**|**Type**|**Description**|
 |------|------|------|
 |<img width=100/>|<img width=100/>|<img width=500/>|
-|hostname* | string  | The device name.  |
-|topoType* | string  | Return the neighbors in a specified topology type, such as "L2_Topo_Type’, ‘L3_Topo_Type’, ‘Ipv6_L3_Topo_Type’ or ‘VPN_Topo_Type". |
+|hostname | list of string  | The devices name, such as ["US-BOS-R1"] or ["US-BOS-R2", "US-BOS-R3", "US-BOS-R4"]|
+|topoType | list of int  | Return the neighbors in specified topology types<br> 1: L3_Topo_Type, <br>2: L2_Topo_Type, <br>3: Ipv6_L3_Topo_Type, <br>4: VPN_Topo_Type, <br>such as [1] or [2,3,4].<br> ***Note:*** Default value is 1. If customer insert the value outside of 1-4 return respones: "Please select the exist topology type."if customer insert the value with wrong value type: ["1", "2"], then return respone: "Topology type must be insert as Integer"|
+|||If insert both "hostname" and "topoType" as filters and there is no corresponding topology interface exist in some devices, then return "Device XXXXX don't have XXXXX interface." If customer only insert one input then only need to consider one filter. e.g. only ["US-BOS-R1"] then return all topology type of this device.|
+|version | string  | Value of this parameter is 1 for verison 8.01|
+|skip|integer|The amount of records to be skipped. The value must not be negative.  If the value is negative, API throws exception {"statusCode":791001,"statusDescription":"Parameter 'skip' cannot be negative"}. No upper bound for this parameter.|
+|limit|integer|The up limit amount of device records to return per API call. The value must not be negative.  If the value is negative, API throws exception {"statusCode":791001,"statusDescription":"Parameter 'limit' cannot be negative"}. The value of this parameter is in range of 10-100. If the parameter is not specified in API call, the default value 50 will be used.|
+|||If only provide skip value, return the rest of the full device list. If only provide limit value, return from the first device in DB. If provided both skip and limit, return as required. Error exceptions follow each parameter's description.|
+|||**Note:** The skip and limit parameters are based on device search result, not topology result record.|
 
 ## Headers
 

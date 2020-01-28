@@ -46,7 +46,7 @@ To see the list of all REST APIs view "REST APIs Documentation".<br>
 2) [Delete Devices Attribute API](https://github.com/NetBrainAPI/NetBrain-REST-API-V8.01/blob/master/REST%20APIs%20Documentation/Devices%20Management/Delete%20Devices%20Attribute%20API.md)<br>
 3) [Delete Devices API](https://github.com/NetBrainAPI/NetBrain-REST-API-V8.01/blob/master/REST%20APIs%20Documentation/Devices%20Management/Delete%20Devices%20API.md)<br>
 4) [Get Device Attributes API](https://github.com/NetBrainAPI/NetBrain-REST-API-V8.01/blob/master/REST%20APIs%20Documentation/Devices%20Management/Get%20Device%20Attributes%20API.md)<br>
-5) [Get Device and Attribute API](https://github.com/NetBrainAPI/NetBrain-REST-API-V8.01/blob/master/REST%20APIs%20Documentation/Devices%20Management/Get%20Device%20and%20Attributes%20API.md)<br>
+5) [Get Devices API Version_1](https://github.com/NetBrainAPI/NetBrain-REST-API-V8.01/blob/master/REST%20APIs%20Documentation/Devices%20Management/Get%20Device%20API%20Version_1.md)<br>
 6) [Get Front Server of A Device API](https://github.com/NetBrainAPI/NetBrain-REST-API-V8.01/blob/master/REST%20APIs%20Documentation/Devices%20Management/Get%20Front%20Server%20of%20A%20Device%20API.md)<br>
 7) [Get Group Devices API](https://github.com/NetBrainAPI/NetBrain-REST-API-V8.01/blob/master/REST%20APIs%20Documentation/Devices%20Management/Get%20Group%20Devices%20API.md)<br>
 8) [Set Device Attribute API](https://github.com/NetBrainAPI/NetBrain-REST-API-V8.01/blob/master/REST%20APIs%20Documentation/Devices%20Management/Set%20Device%20Attribute%20API.md)<br>
