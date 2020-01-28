@@ -552,6 +552,33 @@ except Exception as e:
   'statusDescription': 'Success.'
 }
 ```
+
+# Example about get all devices by calling this API:
+
+```python
+full_url = nb_url + "/ServicesAPI/API/V1/CMDB/Devices"
+headers = {'Content-Type': 'application/json', 'Accept': 'application/json'}
+headers["Token"]=token
+skip = 0
+count = 50
+try:
+    while count == 50:
+        data = {
+            "version": 1,
+            "skip":skip,
+            "fullattr":1
+        }
+        response = requests.get(full_url, params = data, headers = headers, verify = False)
+        if response.status_code == 200:
+            result = response.json()
+            count = len(result["devices"])
+            skip = skip + count
+            print (result)
+        else:
+            print("Get Devices failed! - " + str(response.text))
+except Exception as e:
+    print (str(e)) 
+```
 # cURL Code from Postman:
 
 
