@@ -190,6 +190,8 @@ def getOneIpTable(token, nb_url, device_filter, pagination, beginIndex, count):
 # call funstion "0" and "100" can be modified by specified purpose
 getOneIpTable(token, nb_url, device_filter, pagination, 0, 100)
 ```
+
+```python
 One Page Result Length: 100
 Completed Result Length: 100
 {'lanSegment': '192.168.0.0/22', 'ip': '192.168.1.2', 'mac': '0050.7966.6808', 'devName': '', 'interfaceName': '', 'switchName': 'US-WDC-S2', 'portName': 'Ethernet0/1', 'alias': '', 'dns': '', 'sourceDevice': 'US-WDC-S2', 'serverType': 1004, 'switchType': 2001, 'updateTime': '2020-01-25T05:07:44Z', 'userFlag': 7, 'source': 'ARP Table', 'vendor': 'PRIVATE', 'descr': ''}
@@ -201,6 +203,7 @@ Completed Result Length: 278
 {'lanSegment': '172.16.8.0/22', 'ip': '172.16.10.143', 'mac': 'AABB.CC01.0800', 'devName': '', 'interfaceName': '', 'switchName': 'ITE_SW1', 'portName': 'GigabitEthernet1/0/1', 'alias': '', 'dns': '', 'sourceDevice': 'US-BOS-R1', 'serverType': 1004, 'switchType': 2001, 'updateTime': '2020-01-25T05:07:45Z', 'userFlag': 7, 'source': 'ARP Table', 'vendor': '', 'descr': ''}
 One Page Result Length: 0
 Completed Result Length: 278
+```
 
 # cURL Code from Postman:
 
