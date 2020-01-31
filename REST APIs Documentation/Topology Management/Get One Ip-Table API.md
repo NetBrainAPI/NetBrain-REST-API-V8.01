@@ -198,16 +198,17 @@ def getOneIpTable(token, nb_url, device_filter, pagination):
 	total_result_length = 0
 
 	while result_length > 0:
-        #query parameter re-combination
+        
+	#query parameter re-combination
 		query_param = {
-            "ip":device_filter["ip"],
-            "lan":device_filter["ip"],
-            "mac":device_filter["ip"],
-            "switch_name":device_filter["ip"],
-            "switch_port":device_filter["ip"],
-            "dns":device_filter["ip"],
-			"beginIndex":pagination["beginIndex"],
-			"count":pagination["count"]
+		    "ip":device_filter["ip"],
+		    "lan":device_filter["ip"],
+		    "mac":device_filter["ip"],
+		    "switch_name":device_filter["ip"],
+		    "switch_port":device_filter["ip"],
+		    "dns":device_filter["ip"],
+		    "beginIndex":pagination["beginIndex"],
+		    "count":pagination["count"]
 		}
 		try:
 			response = requests.get(full_url, headers=headers, params=query_param, verify=False)
