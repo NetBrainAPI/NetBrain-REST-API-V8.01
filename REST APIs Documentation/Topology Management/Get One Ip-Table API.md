@@ -181,17 +181,19 @@ def getOneIpTable(token, nb_url, device_filter, pagination, beginIndex, count):
                 print("One Page Result Length: " + str(result_length))
                 print("Completed Result Length: " + str(total_result_length))
                 if result_length > 0:
-                    print(result)
+                    print(result) #the follow response from print(result[0])
             else:
                 print("Get One-IP Table failed! - " + str(response.text))
         except Exception as e:
             print (str(e))
 
 # call funstion "0" and "100" can be modified by specified purpose
-getOneIpTable(token, nb_url, device_filter, pagination, 0, 100)
+getOneIpTable(token, nb_url, device_filter, 0, 100)
 ```
 
 ```python
+#Response:
+
 One Page Result Length: 100
 Completed Result Length: 100
 {'lanSegment': '192.168.0.0/22', 'ip': '192.168.1.2', 'mac': '0050.7966.6808', 'devName': '', 'interfaceName': '', 'switchName': 'US-WDC-S2', 'portName': 'Ethernet0/1', 'alias': '', 'dns': '', 'sourceDevice': 'US-WDC-S2', 'serverType': 1004, 'switchType': 2001, 'updateTime': '2020-01-25T05:07:44Z', 'userFlag': 7, 'source': 'ARP Table', 'vendor': 'PRIVATE', 'descr': ''}
