@@ -162,6 +162,73 @@ except Exception as e:
 
     {'OneIPList': [{'lanSegment': '123.20.1.8/29', 'ip': '123.20.1.11', 'mac': 'AABB.CC80.1300', 'devName': 'SW6', 'interfaceName': 'Vlan66', 'switchName': '', 'portName': '', 'alias': '', 'dns': 'SW6.Vlan66', 'sourceDevice': 'SW6', 'serverType': 2001, 'switchType': 2001, 'updateTime': '2019-02-01T19:13:05Z', 'userFlag': 9, 'source': 'Device Interface', 'vendor': '', 'descr': ''}], 'statusCode': 790200, 'statusDescription': 'Success.'}
     
+    
+# Full Example with Full :
+
+
+```python
+#input dict for device filter query parameters
+device_filter = {
+    "ip":"", #customized string input value
+    "lan":"", #customized string input value
+    "mac":"", #customized string input value
+    "switch_name":"", #customized string input value
+    "switch_port":"", #customized string input value
+    "dns":"" #customized string input value
+}
+
+#input dict for One-Ip table pagination
+pagination = {
+    "beginIndex" : 0, #customized int input value
+    "count" : 100 #customized int input value
+}
+
+def getOneIpTable(token, nb_url, device_filter, pagination):
+	full_url = nb_url + "/ServicesAPI/API/V1/CMDB/Topology/OneIPTable"
+
+	headers = {
+		"Accept":"application/json",
+		"Content-Type":"application/json",
+		"token":token
+	}
+
+	complete_result = []
+
+	result_length = 1
+	total_result_length = 0
+
+	while result_length > 0:
+        #query parameter re-combination
+		query_param = {
+            "ip":device_filter["ip"],
+            "lan":device_filter["ip"],
+            "mac":device_filter["ip"],
+            "switch_name":device_filter["ip"],
+            "switch_port":device_filter["ip"],
+            "dns":device_filter["ip"],
+			"beginIndex":pagination["beginIndex"],
+			"count":pagination["count"]
+		}
+		try:
+			response = requests.get(full_url, headers=headers, params=query_param, verify=False)
+			if response.status_code == 200:
+				result = response.json()["OneIPList"]
+				result_length = len(result)
+				complete_result = complete_result + result
+				beginIndex = beginIndex + count
+				total_result_length = total_result_length + result_length
+				print("One Page Result Length: " + str(result_length))
+				print("Completed Result Length: " + str(total_result_length))
+				if result_length > 0:
+					print(result[0])
+			else:
+				print("Get One-IP Table failed! - " + str(response.text))
+		except Exception as e:
+			print (str(e))
+
+# call funstion
+getOneIpTable(token, nb_url, device_filter, pagination)
+```
 
 # cURL Code from Postman:
 
