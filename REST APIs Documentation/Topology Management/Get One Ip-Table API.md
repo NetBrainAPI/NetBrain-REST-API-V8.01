@@ -141,59 +141,66 @@ device_filter = {
     "dns":"" #customized string input value
 }
 
-#input dict for One-Ip table pagination
-pagination = {
-    "beginIndex" : 0, #customized int input value
-    "count" : 100 #customized int input value
-}
+def getOneIpTable(token, nb_url, device_filter, pagination, beginIndex, count):
+    full_url = nb_url + "/ServicesAPI/API/V1/CMDB/Topology/OneIPTable"
 
-def getOneIpTable(token, nb_url, device_filter, pagination):
-	full_url = nb_url + "/ServicesAPI/API/V1/CMDB/Topology/OneIPTable"
+    headers = {
+        "Accept":"application/json",
+        "Content-Type":"application/json",
+        "token":token
+    }
 
-	headers = {
-		"Accept":"application/json",
-		"Content-Type":"application/json",
-		"token":token
-	}
+    #     beginIndex = 0
+    #     count = 100
 
-	complete_result = []
+    complete_result = []
 
-	result_length = 1
-	total_result_length = 0
+    result_length = 1
+    total_result_length = 0
 
-	while result_length > 0:
-        
-	#query parameter re-combination from two input dicts
-		query_param = {
-		    "ip":device_filter["ip"],
-		    "lan":device_filter["ip"],
-		    "mac":device_filter["ip"],
-		    "switch_name":device_filter["ip"],
-		    "switch_port":device_filter["ip"],
-		    "dns":device_filter["ip"],
-		    "beginIndex":pagination["beginIndex"],
-		    "count":pagination["count"]
-		}
-		try:
-			response = requests.get(full_url, headers=headers, params=query_param, verify=False)
-			if response.status_code == 200:
-				result = response.json()["OneIPList"]
-				result_length = len(result)
-				complete_result = complete_result + result
-				beginIndex = beginIndex + count
-				total_result_length = total_result_length + result_length
-				print("One Page Result Length: " + str(result_length))
-				print("Completed Result Length: " + str(total_result_length))
-				if result_length > 0:
-					print(result[0])
-			else:
-				print("Get One-IP Table failed! - " + str(response.text))
-		except Exception as e:
-			print (str(e))
+    while result_length > 0:
+        #query parameter re-combination.
+        query_param = {
+            "ip":device_filter["ip"],
+            "lan":device_filter["ip"],
+            "mac":device_filter["ip"],
+            "switch_name":device_filter["ip"],
+            "switch_port":device_filter["ip"],
+            "dns":device_filter["ip"],
+            "beginIndex":beginIndex,
+            "count":count
+        }
+        try:
+            response = requests.get(full_url, headers=headers, params=query_param, verify=False)
+            if response.status_code == 200:
+                result = response.json()["OneIPList"]
+                result_length = len(result)
+                complete_result = complete_result + result
+                beginIndex = beginIndex + count
+                total_result_length = total_result_length + result_length
+                print("One Page Result Length: " + str(result_length))
+                print("Completed Result Length: " + str(total_result_length))
+                if result_length > 0:
+                    print(result)
+            else:
+                print("Get One-IP Table failed! - " + str(response.text))
+        except Exception as e:
+            print (str(e))
 
-# call funstion
-getOneIpTable(token, nb_url, device_filter, pagination)
+# call funstion "0" and "100" can be modified by specified purpose
+getOneIpTable(token, nb_url, device_filter, pagination, 0, 100)
 ```
+One Page Result Length: 100
+Completed Result Length: 100
+{'lanSegment': '192.168.0.0/22', 'ip': '192.168.1.2', 'mac': '0050.7966.6808', 'devName': '', 'interfaceName': '', 'switchName': 'US-WDC-S2', 'portName': 'Ethernet0/1', 'alias': '', 'dns': '', 'sourceDevice': 'US-WDC-S2', 'serverType': 1004, 'switchType': 2001, 'updateTime': '2020-01-25T05:07:44Z', 'userFlag': 7, 'source': 'ARP Table', 'vendor': 'PRIVATE', 'descr': ''}
+One Page Result Length: 100
+Completed Result Length: 200
+{'lanSegment': '10.8.3.0/30', 'ip': '10.8.3.2', 'mac': 'AABB.CC00.0101', 'devName': 'CA-TOR-SW2', 'interfaceName': 'Ethernet1/0', 'switchName': 'CA-TOR-R1', 'portName': 'Ethernet0/0', 'alias': '', 'dns': 'CA-TOR-SW2.Ethernet1/0', 'sourceDevice': 'CA-TOR-SW2', 'serverType': 2001, 'switchType': 2, 'updateTime': '2020-01-25T05:07:45Z', 'userFlag': 9, 'source': 'Device Interface', 'vendor': '', 'descr': ''}
+One Page Result Length: 78
+Completed Result Length: 278
+{'lanSegment': '172.16.8.0/22', 'ip': '172.16.10.143', 'mac': 'AABB.CC01.0800', 'devName': '', 'interfaceName': '', 'switchName': 'ITE_SW1', 'portName': 'GigabitEthernet1/0/1', 'alias': '', 'dns': '', 'sourceDevice': 'US-BOS-R1', 'serverType': 1004, 'switchType': 2001, 'updateTime': '2020-01-25T05:07:45Z', 'userFlag': 7, 'source': 'ARP Table', 'vendor': '', 'descr': ''}
+One Page Result Length: 0
+Completed Result Length: 278
 
 # cURL Code from Postman:
 
