@@ -1,7 +1,7 @@
 
 # One Ip Table API Design
 
-## ***GET*** /V1/CMDB/Topology/OneIPTable{?Ip}&{?beginIndex}&{?count}
+## ***GET*** /V1/CMDB/Topology/OneIPTable
 Calling this API to get the One-IP Table.
 
 If user provide an input value of "ip" attribute, then this API will return all items which have the same ip address in One-IP Table;
