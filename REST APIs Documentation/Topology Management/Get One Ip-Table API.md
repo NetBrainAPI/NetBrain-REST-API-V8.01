@@ -120,9 +120,7 @@ If user set "IP = null" or " IP = "" " but provide the input values of "beginInd
 
 # Full Examples:
 
-
 ```python
-# import python modules 
 import requests
 import time
 import urllib3
@@ -130,43 +128,9 @@ import pprint
 import json
 urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 
-# Set the request inputs
 token = "220d6462-ba64-4058-83cb-affb2d55de78"
 nb_url = "http://192.168.28.79"
-full_url = nb_url + "/ServicesAPI/API/V1/CMDB/Topology/OneIPTable"
-headers = {'Content-Type': 'application/json', 'Accept': 'application/json'}
-headers["Token"] = token
 
-ip = "123.20.1.11"
-beginIndex = 0
-count = 5
-
-data = {
-    "ip" : ip,
-    "beginIndex" : beginIndex,
-    "count" : count
-}
-
-try:
-    response = requests.get(full_url, params = data, headers = headers, verify = False)
-    if response.status_code == 200:
-        result = response.json()
-        print (result)
-    else:
-        print ("Get One-Ip Table failed! - " + str(response.text))
-    
-except Exception as e:
-    print (str(e))  
-
-```
-
-    {'OneIPList': [{'lanSegment': '123.20.1.8/29', 'ip': '123.20.1.11', 'mac': 'AABB.CC80.1300', 'devName': 'SW6', 'interfaceName': 'Vlan66', 'switchName': '', 'portName': '', 'alias': '', 'dns': 'SW6.Vlan66', 'sourceDevice': 'SW6', 'serverType': 2001, 'switchType': 2001, 'updateTime': '2019-02-01T19:13:05Z', 'userFlag': 9, 'source': 'Device Interface', 'vendor': '', 'descr': ''}], 'statusCode': 790200, 'statusDescription': 'Success.'}
-    
-    
-# Example for Get Entire One-Ip Table with All Input Variables Applied:
-
-
-```python
 #input dict for device filter query parameters
 device_filter = {
     "ip":"", #customized string input value
