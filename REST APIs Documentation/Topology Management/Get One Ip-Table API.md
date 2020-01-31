@@ -199,7 +199,7 @@ def getOneIpTable(token, nb_url, device_filter, pagination):
 
 	while result_length > 0:
         
-	#query parameter re-combination
+	#query parameter re-combination from two input dicts
 		query_param = {
 		    "ip":device_filter["ip"],
 		    "lan":device_filter["ip"],
