@@ -133,12 +133,12 @@ nb_url = "http://192.168.28.79"
 
 #input dict for device filter query parameters
 device_filter = {
-    "ip":"", #customized string input value
-    "lan":"", #customized string input value
-    "mac":"", #customized string input value
-    "switch_name":"", #customized string input value
-    "switch_port":"", #customized string input value
-    "dns":"" #customized string input value
+    "ip":"", #"192.168.1.2"
+    "lan":"", #"192.168.0.0/22"
+    "mac":"", #"0050.7966.6808"
+    "switch_name":"", #"US-WDC-S2"
+    "switch_port":"", #"US-WDC-S2.Ethernet0/1"
+    "dns":"" #"US-WDC-S2.Vlan200"
 }
 
 def getOneIpTable(token, nb_url, device_filter, pagination, beginIndex, count):
