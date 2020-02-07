@@ -53,10 +53,12 @@ To see the list of all REST APIs view "REST APIs Documentation".<br>
 9) [Get Device Configuration API](https://github.com/NetBrainAPI/NetBrain-REST-API-V8.01/blob/master/REST%20APIs%20Documentation/Devices%20Management/Get%20Device%20Configration%20API.md)<br>
 10) [Get the connected switch ports of an end system API](https://github.com/NetBrainAPI/NetBrain-REST-API-V8.01/blob/master/REST%20APIs%20Documentation/Devices%20Management/Get%20the%20connected%20switch%20ports%20of%20an%20end%20system%20API.md)<br>
 11) [Get Device Raw Data API](https://github.com/NetBrainAPI/NetBrain-REST-API-V8.01/blob/master/REST%20APIs%20Documentation/Devices%20Management/Get%20Device%20Data%20API.md) <br>
+12) [Get Device group API](https://github.com/NetBrainAPI/NetBrain-REST-API-V8.01/blob/master/REST%20APIs%20Documentation/Devices%20Management/Get%20Device%20Group%20API.md) <br>
+***Use this API to get group ID***
 
 ### [Devices Access Control](https://github.com/NetBrainAPI/NetBrain-REST-API-V8.01/tree/master/REST%20APIs%20Documentation/Device%20Access%20Control)
 ***Note:*** If customer want to use the following APIs, please go to the **System Management -> Advanced Settings -> Device Access Policy** then check the "Enable device access policy". <br>
-<img src="REST APIs Documentation/Device Access Control/DeviceAccessImage.JPG" /><br>
+<img src="REST APIs Documentation/Device Access Control/DeviceAccessImage.JPG" /><br>https://github.com/NetBrainAPI/NetBrain-REST-API-V8.01/blob/master/REST%20APIs%20Documentation/Devices%20Management/Get%20Device%20Group%20API.md
 1) [Add Device Access Policy API](https://github.com/NetBrainAPI/NetBrain-REST-API-V8.01/blob/master/REST%20APIs%20Documentation/Device%20Access%20Control/AddDeviceAccessPolicy%20API.md)<br>
 2) [Assign Device Access Policies to User API](https://github.com/NetBrainAPI/NetBrain-REST-API-V8.01/blob/master/REST%20APIs%20Documentation/Device%20Access%20Control/AssignDeviceAccessPoliciesToUser%20API.md)<br>
 3) [Delete Device Access Policy API](https://github.com/NetBrainAPI/NetBrain-REST-API-V8.01/blob/master/REST%20APIs%20Documentation/Device%20Access%20Control/DeleteDeviceAccessPolicy%20API.md)<br>
