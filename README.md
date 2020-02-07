@@ -48,7 +48,7 @@ To see the list of all REST APIs view "REST APIs Documentation".<br>
 4) [Get Device Attributes API](https://github.com/NetBrainAPI/NetBrain-REST-API-V8.01/blob/master/REST%20APIs%20Documentation/Devices%20Management/Get%20Device%20Attributes%20API.md)<br>
 5) [Get Devices API Version_1](https://github.com/NetBrainAPI/NetBrain-REST-API-V8.01/blob/master/REST%20APIs%20Documentation/Devices%20Management/Get%20Device%20API%20Version_1.md)<br>
 6) [Get Front Server of A Device API](https://github.com/NetBrainAPI/NetBrain-REST-API-V8.01/blob/master/REST%20APIs%20Documentation/Devices%20Management/Get%20Front%20Server%20of%20A%20Device%20API.md)<br>
-7) [Get Group Devices API](https://github.com/NetBrainAPI/NetBrain-REST-API-V8.01/blob/master/REST%20APIs%20Documentation/Devices%20Management/Get%20Group%20Devices%20API.md)<br>
+7) [Get Device Information in Current Device Group API](https://github.com/NetBrainAPI/NetBrain-REST-API-V8.01/blob/master/REST%20APIs%20Documentation/Devices%20Management/Get%20Group%20Devices%20API.md)<br>
 8) [Set Device Attribute API](https://github.com/NetBrainAPI/NetBrain-REST-API-V8.01/blob/master/REST%20APIs%20Documentation/Devices%20Management/Set%20Device%20Attribute%20API.md)<br>
 9) [Get Device Configuration API](https://github.com/NetBrainAPI/NetBrain-REST-API-V8.01/blob/master/REST%20APIs%20Documentation/Devices%20Management/Get%20Device%20Configration%20API.md)<br>
 10) [Get the connected switch ports of an end system API](https://github.com/NetBrainAPI/NetBrain-REST-API-V8.01/blob/master/REST%20APIs%20Documentation/Devices%20Management/Get%20the%20connected%20switch%20ports%20of%20an%20end%20system%20API.md)<br>
