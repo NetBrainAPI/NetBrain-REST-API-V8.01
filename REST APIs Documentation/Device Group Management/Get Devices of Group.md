@@ -19,9 +19,13 @@ This API call returns devices in a device group.
 |<img width=100/>|<img width=100/>|<img width=500/>|
 |Bearer Authentication| Headers | Authentication token | 
 
-## Parameters(****required***)
+## Path Parameters(****required***)
 
-> No parameters required.
+|**Name**|**Type**|**Description**|
+|------|------|------|
+|<img width=100/>|<img width=100/>|<img width=500/>|
+| deviceGroupID | string  | The unique ID of specified device group. |
+
 
 ## Headers
 
