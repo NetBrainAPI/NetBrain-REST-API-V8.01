@@ -137,21 +137,21 @@ API_Body = {
         "triggered_by": "Netbrain",
         "user_id": "admin",
         "user": "gongdai.liu",
-        "device": "US-BOS-R1",
+#         "device": "R1",
 #         "interface": "Ethernet2/0.100",
         "stub_name": "APITest",
-        "stub_setting": {
-            "mode": 0,
-            "max_waiting_hours": 1
-        }
+#         "stub_setting": {
+#             "mode": 0,
+#             "max_waiting_hours": 1
+#         }
     },
     "map_setting": {
         "map_create_mode": 2,
         "map_open_para": {
-            "map_id": "",
-            "site_id": "",
-            "device_group_id": "",
-            "duplicate_map": ""
+#             "map_id": "2ca17e26-e942-0147-85eb-e3652a71e19f",
+#             "site_id": "",
+#             "device_group_id": "",
+#             "duplicate_map": ""
         }
     }
 }
@@ -180,10 +180,10 @@ result
 
 
 
-    {'mapId': '5edcf486-108c-63e8-5c30-a6d32941d576',
-     'mapName': 'APIExisting',
+    {'mapId': '2ca17e26-e942-0147-85eb-e3652a71e19f',
+     'mapName': 'CXL Lab',
      'mapType': 1,
-     'mapUrl': 'map.html?t=40e0032e-14e7-4fea-7d00-8fe8bd65efae&d=b924c2f0-7210-43ba-9cdd-d1757ae23742&id=5edcf486-108c-63e8-5c30-a6d32941d576&maptype=1',
+     'mapUrl': 'map.html?t=40e0032e-14e7-4fea-7d00-8fe8bd65efae&d=b924c2f0-7210-43ba-9cdd-d1757ae23742&id=2ca17e26-e942-0147-85eb-e3652a71e19f&maptype=1',
      'stubName': 'APITest'}
 
 
