@@ -14,13 +14,13 @@ Call this API to trigger a map built by Netbrain from third part software.
 
 > **Authentication** : 
 
->| Type | In | Name |
+| Type | In | Name |
 |---|---|---|
 |Bearer Authentication| Headers | Authentication token | 
 
 ## Request body(****required***)
 
->|**Name**|**Type**|**Description**|
+|**Name**|**Type**|**Description**|
 |---|---|---|
 |domain_setting.tenant_id* | string  | Tenant Id  |
 |domain_setting.domain_id* | string  | Domain Id  |
@@ -79,20 +79,20 @@ body = {
 
 > **Data Format Headers**
 
-> |**Name**|**Type**|**Description**|
+|**Name**|**Type**|**Description**|
 |---|---|---|
 | Content-Type | string  | support "application/json" |
 | Accept | string  | support "application/json" |
 
 > **Authorization Headers**
 
-> |**Name**|**Type**|**Description**|
+|**Name**|**Type**|**Description**|
 |---|---|---|
 | token | string  | Authentication token, get from login API. |
 
 ## Response
 
->|**Name**|**Type**|**Description**|
+|**Name**|**Type**|**Description**|
 |---|---|---|
 |mapId| string | The ID of the map which users triggered from third party sofware.  |
 |mapName| string | The name of the map. |
