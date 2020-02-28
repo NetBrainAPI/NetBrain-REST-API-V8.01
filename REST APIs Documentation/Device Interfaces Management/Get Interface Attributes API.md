@@ -29,7 +29,7 @@ Call this API to get the value for a specified attribute of a device interface, 
 |------|------|------|
 |<img width=100/>|<img width=100/>|<img width=500/>|
 |hostname*| string | Device hostname.  |
-|interfaceName* | string  | Input the full name of the interface. |
+|interfaceName | string  | Input the full name of the interface.<br> ***Note:*** When calling this API, this atribute can be set as null or don't set as a parameter directly but **cannot** set as a empty string: "".|
 |interfaceType | string | The corrsponding name of interface type.<br> intfs : Physical Interface. <br> ipIntfs : IPv4 Interface. <br> ip6Intfs : IPv6 Interface. <br> ipsecVpnIntfs : IPsec VPN Interface. <br> greVpnIntfs : GRE VPN Interface. |
 |attributeName | string  | Optional. The name of the attribute that you want to get its value,, get all attributes if the attribute name is not specifed.<br>Please note that the attribute name here is case sensitive and not the name displayed in the Device Details pane of NetBrain IE system. See Applicable Interface Attributes for system built-in interface attributes.  |
 
