@@ -448,7 +448,7 @@ commit_Site_Transaction_URL = nb_url + "/ServicesAPI/API/V1/CMDB/Sites/Transacti
 def commit_Site_Transaction(commit_Site_Transactio_URL, headers, token, rebuildSite):
     headers["Token"] = token
     try:
-        response = requests.post(commit_Site_Transactio_URL, data = json.dumps(body), headers = headers, verify = False)
+        response = requests.put(commit_Site_Transactio_URL, data = json.dumps(body), headers = headers, verify = False)
         if response.status_code == 200:
             result = response.json()
             print (result)
