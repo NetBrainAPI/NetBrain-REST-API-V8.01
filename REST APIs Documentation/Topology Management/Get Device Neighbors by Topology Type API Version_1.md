@@ -159,6 +159,52 @@ except Exception as e:
 
     {'neighbors': [{'hostname': 'R4', 'interface': 'Ethernet0/1 123.10.1.1/30'}, {'hostname': 'R5', 'interface': 'Ethernet0/1 123.10.1.6/30'}], 'statusCode': 790200, 'statusDescription': 'Success.'}
     
+# Example to get all devices topo info in current domain:
+
+
+```python
+# import python modules 
+import requests
+import time
+import urllib3
+import pprint
+import json
+urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
+
+# Set the request inputs
+token = "e9c7af7c-eedd-40fb-8b4b-356974a12b91"
+nb_url = "http://192.168.28.143"
+full_url = nb_url + "/ServicesAPI/API/V1/CMDB/Topology/Devices/Neighbors"
+headers = {'Content-Type': 'application/json', 'Accept': 'application/json'}
+headers["Token"] = token
+
+hostnames = ["BJ_Acc_Sw4"...]# get the list of all device hostnames in current domain by alling get device API first.
+topoTypes = [1]
+
+skip = 0
+count = 50
+try:
+    while count == 50:
+        data = {
+            "hostname" : hostnames,
+            "topoType" : topoTypes,
+            "version": "1",
+            "skip" : skip
+        }
+        response = requests.get(full_url, params = data, headers = headers, verify = False)
+        if response.status_code == 200:
+            result = response.json()
+            count = len(result["topology"])
+            skip = skip + count
+            print (result)
+	    #Un-command next line if want to test calling result length.
+            #print (len(result['topology'])) 
+        else:
+            print("Get neighbors by topology failed! - " + str(response.text))
+except Exception as e:
+    print (str(e)) 
+```
+    
 
 # cURL Code from Postman:
 
