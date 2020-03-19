@@ -74,6 +74,7 @@ Call this API to export a map.
 
 ```python
 # import python modules 
+import base64 # for map transfer
 import requests
 import time
 import urllib3
@@ -101,7 +102,10 @@ try:
     response = requests.get(full_url, params=data, headers=headers, verify=False)
     if response.status_code == 200:
         result = response.json()
-        #map_data = result["fileData"]
+        map_data = result["fileData"]
+        path="c:\\...\\map.xmap" #provide the path you want to export the map.
+        with open(path,"wb") as ff:
+            ff.write(base64.b64decode(map_data)
         print (result)
     elif response.status_code != 200:
         print ("Export map failed! - " + str(response.text))
