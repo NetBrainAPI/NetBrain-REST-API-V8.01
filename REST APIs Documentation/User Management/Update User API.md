@@ -32,13 +32,6 @@ The only way to clear a field is delete a user and add this user back with new v
 |email* | string  | The email address of the user. This parameter is required. |
 |firstName* | string  | The first name of the user. This parameter is required.  |
 |lastName* | string  | The last name of the user. This parameter is required. |
-|**Name**|**Type**|**Description**|
-|------|------|------|
-|<img width=100/>|<img width=100/>|<img width=500/>|
-|username* | string  | The user name. This parameter is required.  |
-|email* | string  | The email address of the user. This parameter is required. |
-|firstName* | string  | The first name of the user. This parameter is required.  |
-|lastName* | string  | The last name of the user. This parameter is required. |
 |password* | string  | The login password. The allowed length is 6-128 characters by default. This parameter is required.  |
 |authenticationServer | string |The name of the authentication server for create an external account.|
 |phoneNumber | string |The phone number of the user.|
