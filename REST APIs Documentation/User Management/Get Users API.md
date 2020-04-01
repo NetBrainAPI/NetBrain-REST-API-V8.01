@@ -95,18 +95,7 @@ Response
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 # Normal Response:
 
-{
-    "UserData": [
-        {
-            "username": "Suneet45",
-            "email": "suneet.tatikonda@netbraintech.com",
-            "firstName": "Suneet",
-            "lastName": "Tatikonda",
-            "allowChangePassword": true,
-            "isSystemAdmin": true,
-            "isUserManager": true,
-            "isSystemManager": true
-        },
+isEmbeddedMapUser,
         {
             "username": "admin",
             "email": "lin.zhu@netbraintech.com",
