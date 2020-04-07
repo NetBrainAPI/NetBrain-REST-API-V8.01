@@ -112,7 +112,7 @@ full_url= nb_url + "/ServicesAPI/API/V1/CMDB/Discovery/Tasks/"+str(taskID)+"/See
 
 try:
     # Do the HTTP request
-    response = requests.delete(full_url, data = json.dumps(body), headers=headers, verify=False)
+    response = requests.delete(full_url, params = body, headers=headers, verify=False)
     # Check for HTTP codes other than 200
     if response.status_code == 200:
         # Decode the JSON response into a dictionary and use the data
