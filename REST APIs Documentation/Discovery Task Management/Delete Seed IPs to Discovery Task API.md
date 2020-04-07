@@ -133,29 +133,8 @@ except Exception as e:
 
 
 ```python
-curl -X DELETE \
-  http://192.168.28.79/ServicesAPI/API/V1/CMDB/Discovery/Tasks/34124e63-31d6-dfad-f5fa-05ae0ebb4b49/Seeds \
-  -H 'Content-Type: application/json' \
-  -H 'Postman-Token: 7c68282c-5f22-41e7-808a-fae8b4127ddc' \
-  -H 'cache-control: no-cache' \
-  -H 'token: fd8b3f95-adc6-406d-9c18-bdb155de2ced' \
-  -d '{
-    "seeds" : 
-        [
-            {
-            	"mgmtIP": "10.1.13.2"
-            	
-            },
-            {
-            	"mgmtIP": "123.1.1.1"
-            	
-            },
-            {
-            	"mgmtIP": "10.1.14.2"
-            	
-            }
-        ]
-}'
+curl --location --request DELETE 'https://integrationlab.netbraintech.com/ServicesAPI/API/V1/CMDB/Discovery/Tasks/SNOW_CMDB_Test/Seeds?ips=10.1.13.2' \
+--header 'token: d9d75950-8d49-48fd-b20b-0510602bef28'
 ```
 
 # Error Examples:
