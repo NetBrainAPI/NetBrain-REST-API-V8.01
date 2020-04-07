@@ -103,12 +103,7 @@ taskID = "34124e63-31d6-dfad-f5fa-05ae0ebb4b49"
 #taskName = "testGDL_DT1"
 
 body = {
-    "seeds" : 
-        [
-            {"mgmtIP": mgmIP1},
-            {"mgmtIP": mgmIP2},
-            {"mgmtIP": mgmIP3}
-        ]
+    "ips" : [mgmIP1, mgmIP2, mgmIP3]
     }
  
 headers = {'Content-Type': 'application/json', 'Accept': 'application/json'}
