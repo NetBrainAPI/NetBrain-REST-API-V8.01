@@ -112,7 +112,7 @@ API Response:     Working Domain Specified Successfully, with domainId: 850ff5e9
     
 
 ## Step 2: Calling Trigger Diagnosis API 
-After we finished all preparations, we are going to start to calling this API in step. One of the most significant characteristic of trigger diagnosis API is the gigantic input body (as a post function the body input is reasonable). There are more than 100 attributes in the entire body parameter. The body including 6 sub-sections, each section provide different input informations.See detail explanation in [Github_trigger_diagnosis](https://github.com/NetBrainAPI/North-Bound-API/blob/master/REST%20APIs%20Documentation/Trigger%20Diagnosis%20API/Trigger%20Diagnosis%20API.md)<br>
+After we finished all preparations, we are going to start to calling this API in step. One of the most significant characteristic of trigger diagnosis API is the gigantic input body (as a post function the body input is reasonable). There are more than 100 attributes in the entire body parameter. The body including 6 sub-sections, each section provide different input informations.See detail explanation in [Github_trigger_diagnosis](https://github.com/NetBrainAPI/NetBrain-REST-API-V8.01/blob/master/REST%20APIs%20Documentation/Trigger%20Diagnosis%20API/Trigger%20Diagnosis%20API%20V8.md)<br>
 
 >***Note:*** before calling this API, users must create a stub in Netbrain GUI system first: click desktop menu button -> System Automation Task Manager -> API Stub Manager -> Add Stub.
 
