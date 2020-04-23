@@ -57,9 +57,10 @@ Application Version
 Network Connectivity
 --------------------
 
-| Source                | Destination       | Protocol   |
-|-----------------------|-------------------|------------|
-| NetBrain Front Server | Solarwinds server | HTTP/HTTPS |
+| Source                | Destination       | Ports                                   |
+|-----------------------|-------------------|-----------------------------------------|
+|                       |                   | NetBrain > Solarwinds 17778 TCP         |
+| NetBrain Front Server | Solarwinds server | Solarwinds > NetBrain 49152 – 65535 TCP |
 
 User Account and Privileges
 ---------------------------

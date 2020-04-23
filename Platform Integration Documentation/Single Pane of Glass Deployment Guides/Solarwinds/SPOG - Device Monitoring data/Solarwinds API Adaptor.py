@@ -25,6 +25,9 @@ class APIPlugin:
         if re.search('http://(.+)', url):
             stripped = re.search('http://(.+)', url)
             url = stripped.group(1)
+        if re.search('https://(.+)', url):
+            stripped = re.search('https://(.+)', url)
+            url = stripped.group(1)
         self._swis = SwisClient(url, user, pwd)
   
     def _query(self, query, deviceName):
