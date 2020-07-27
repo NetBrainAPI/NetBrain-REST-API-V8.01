@@ -53,7 +53,7 @@ To see the list of all REST APIs view "REST APIs Documentation".<br>
 9) [Get Device Configuration API](https://github.com/NetBrainAPI/NetBrain-REST-API-V8.01/blob/master/REST%20APIs%20Documentation/Devices%20Management/Get%20Device%20Configration%20API.md)<br>
 10) [Get the connected switch ports of an end system API](https://github.com/NetBrainAPI/NetBrain-REST-API-V8.01/blob/master/REST%20APIs%20Documentation/Devices%20Management/Get%20the%20connected%20switch%20ports%20of%20an%20end%20system%20API.md)<br>
 11) [Get Device Raw Data API](https://github.com/NetBrainAPI/NetBrain-REST-API-V8.01/blob/master/REST%20APIs%20Documentation/Devices%20Management/Get%20Device%20Data%20API.md) <br>
-12) [Get Device group API](https://github.com/NetBrainAPI/NetBrain-REST-API-V8.01/blob/master/REST%20APIs%20Documentation/Devices%20Management/Get%20Device%20Group%20API.md) (***Call this API to get group ID***)
+
 
 ### [Devices Access Control](https://github.com/NetBrainAPI/NetBrain-REST-API-V8.01/tree/master/REST%20APIs%20Documentation/Device%20Access%20Control)
 ***Note:*** If customer want to use the following APIs, please go to the **System Management -> Advanced Settings -> Device Access Policy** then check the "Enable device access policy". <br>
@@ -75,7 +75,7 @@ To see the list of all REST APIs view "REST APIs Documentation".<br>
 3) [Delete Device Group API](https://github.com/NetBrainAPI/NetBrain-REST-API-V8.01/blob/master/REST%20APIs%20Documentation/Device%20Group%20Management/Delete%20Device%20Group.md)<br>
 4) [Delete devices from Device Group API](https://github.com/NetBrainAPI/NetBrain-REST-API-V8.01/blob/master/REST%20APIs%20Documentation/Device%20Group%20Management/Delete%20Devices%20from%20Group.md)<br>
 5) [Get Device Hostnames of Device Group API](https://github.com/NetBrainAPI/NetBrain-REST-API-V8.01/blob/master/REST%20APIs%20Documentation/Device%20Group%20Management/Get%20Devices%20of%20Group.md)<br>
-
+6) [Get Device group API](https://github.com/NetBrainAPI/NetBrain-REST-API-V8.01/blob/master/REST%20APIs%20Documentation/Devices%20Management/Get%20Device%20Group%20API.md) (***Call this API to get group ID***)
 
 ### [Discovery Task Management](https://github.com/NetBrainAPI/NetBrain-REST-API-V8.01/tree/master/REST%20APIs%20Documentation/Discovery%20Task%20Management) 
 1) [Create Schedule Discovery Task API](https://github.com/NetBrainAPI/NetBrain-REST-API-V8.01/blob/master/REST%20APIs%20Documentation/Discovery%20Task%20Management/Create%20Schedule%20Discovery%20API.md)<br>
