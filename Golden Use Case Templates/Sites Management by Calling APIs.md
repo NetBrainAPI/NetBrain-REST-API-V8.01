@@ -445,7 +445,7 @@ body = {"rebuildSite" : rebuildSite}
 
 commit_Site_Transaction_URL = nb_url + "/ServicesAPI/API/V1/CMDB/Sites/Transactions"
 
-def commit_Site_Transaction(commit_Site_Transactio_URL, headers, token, rebuildSite):
+def commit_Site_Transaction(commit_Site_Transaction_URL, headers, token, rebuildSite):
     headers["Token"] = token
     try:
         response = requests.put(commit_Site_Transaction_URL, data = json.dumps(body), headers = headers, verify = False)
@@ -458,7 +458,7 @@ def commit_Site_Transaction(commit_Site_Transactio_URL, headers, token, rebuildS
     except Exception as e:
         print (str(e))
         
-result = commit_Site_Transactio(commit_Site_Transactio_URL, headers, token, rebuildSite)
+result = commit_Site_Transactio(commit_Site_Transaction_URL, headers, token, rebuildSite)
 result
 ```
 API Response: 
