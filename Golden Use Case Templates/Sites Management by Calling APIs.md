@@ -458,7 +458,7 @@ def commit_Site_Transaction(commit_Site_Transaction_URL, headers, token, rebuild
     except Exception as e:
         print (str(e))
         
-result = commit_Site_Transactio(commit_Site_Transaction_URL, headers, token, rebuildSite)
+result = commit_Site_Transaction(commit_Site_Transaction_URL, headers, token, rebuildSite)
 result
 ```
 API Response: 
