@@ -153,7 +153,7 @@ def create_a_transaction(create_a_transaction_URL, headers, token):
             result = response.json()
             print (result)
         else:
-            print ("Get User Report failed! - " + str(response.text))
+            print ("Create transaction failed! - " + str(response.text))
 
     except Exception as e:
         print (str(e)) 
@@ -181,7 +181,7 @@ def site_transaction_heartbeat(headers, token):
             result = response.json()
             print (result)
         else:
-            print ("Get User Report failed! - " + str(response.text))
+            print ("Set site transaction heartbeat failed! - " + str(response.text))
 
     except Exception as e:
         print (str(e))
@@ -445,10 +445,10 @@ body = {"rebuildSite" : rebuildSite}
 
 commit_Site_Transaction_URL = nb_url + "/ServicesAPI/API/V1/CMDB/Sites/Transactions"
 
-def commit_Site_Transaction(commit_Site_Transactio_URL, headers, token, rebuildSite):
+def commit_Site_Transaction(commit_Site_Transaction_URL, headers, token, rebuildSite):
     headers["Token"] = token
     try:
-        response = requests.put(commit_Site_Transactio_URL, data = json.dumps(body), headers = headers, verify = False)
+        response = requests.put(commit_Site_Transaction_URL, data = json.dumps(body), headers = headers, verify = False)
         if response.status_code == 200:
             result = response.json()
             print (result)
@@ -458,7 +458,7 @@ def commit_Site_Transaction(commit_Site_Transactio_URL, headers, token, rebuildS
     except Exception as e:
         print (str(e))
         
-result = commit_Site_Transactio(commit_Site_Transactio_URL, headers, token, rebuildSite)
+result = commit_Site_Transaction(commit_Site_Transaction_URL, headers, token, rebuildSite)
 result
 ```
 API Response: 

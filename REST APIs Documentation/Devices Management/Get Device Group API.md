@@ -1,7 +1,7 @@
 
 # Device API Design
 
-## ***GET*** /V1/CMDB/Devices/GroupDevices/{groupname}
+## ***GET*** /V1/CMDB/DeviceGroups/{groupname}
 Call this API to get all device groups in current domain, include Public group, System group and Private group.
 
 ## Detail Information

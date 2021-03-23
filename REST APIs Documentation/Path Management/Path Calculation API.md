@@ -3,7 +3,7 @@
 
 ***Note:*** the sequence of steps must be followed if customer want to use Path Calculation API.
 
-# Step 1, Resolve device gateway. 
+# Step 1 - Resolve device gateway
 =======================================================================================================================
 
 ## ***GET*** /V1/CMDB/Path/Gateways
@@ -151,7 +151,7 @@ curl -X GET \
   -H 'token: 76f95ffa-fc1b-4eb6-a503-75760185f2a5'
 ```
 
-# Step 2, Path Calculation
+# Step 2 - Path Calculation
 =======================================================================================================================
 
 ## ***POST*** /V1/CMDB/Path/Calculation
@@ -329,10 +329,10 @@ curl -X POST \
 }'
 ```
 
-# Step 3, Get Path Calculation OverView
+# Step 3 - Get Path Calculation OverView
 =======================================================================================================================
 
-## ***GET*** /V1/CMDB/Path/Calculation/{taskID}/Result	
+## ***GET*** /V1/CMDB/Path/Calculation/{taskID}/OverView	
 Call this API to get the hop information of a path calculated through the CalcPath API. 
 
 If the Calculation Path task is not finished yet or failed, user will get an error with messsage reminding.which means you don't need to wait anymore before trying to query the result.
