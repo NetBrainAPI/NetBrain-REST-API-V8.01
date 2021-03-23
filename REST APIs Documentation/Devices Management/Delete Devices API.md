@@ -19,14 +19,12 @@ Call this API to delete a device in current domain.
 |<img width=100/>|<img width=100/>|<img width=500/>|
 |Bearer Authentication| Headers | Authentication token | 
 
-## Request body(****required***)
-
->No request body.
->>**Note**:<br>
-The latest update to the HTTP 1.1 specification (RFC 7231) explicitly permits an entity body in a DELETE request:<br>
-***A payload within a DELETE request message has no defined semantics; sending a payload body on a DELETE request might cause some existing implementations to reject the request.***
-
 ## Query Parameters(****required***)
+
+>No query parameters.
+
+
+## Request body(****required***)
 
 |**Name**|**Type**|**Description**|
 |------|------|------|
