@@ -21,7 +21,7 @@ Call this API to delete a device in current domain.
 
 ## Query Parameters(****required***)
 
->No query parameters.
+>**No query parameters.**
 
 
 ## Request body(****required***)
