@@ -127,7 +127,7 @@ isEmbeddedMapUser,
                     "canAddDomain": true
                 }
             ]
-        },
+        }
     "statusCode": 790200,
     "statusDescription": "Success."
 }
