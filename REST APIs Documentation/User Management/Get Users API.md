@@ -71,9 +71,6 @@ Response
 | UserData.email               | string                       | The email address of the user.                                                                                                                                                                                                                                                                                                        |
 | UserData.firstName           | string                       | The first name of the user.                                                                                                                                                                                                                                                                                                           |
 | UserData.lastName            | string                       | The last name of the user.                                                                                                                                                                                                                                                                                                            |
-| UserData.authenticationType  | int                          | The authentication type for the user account.                                                                                                                                                                                                                                                                                         |
-|                              |                              | ▪ 1 - Local                                                                                                                                                                                                                                                                                                                           |
-|                              |                              | ▪ 2 - External                                                                                                                                                                                                                                                                                                                        |
 | UserData.phoneNumber         | string                       | The phone number of the user.                                                                                                                                                                                                                                                                                                         |
 | UserData.department          | string                       | The department that the user belongs to.                                                                                                                                                                                                                                                                                              |
 | UserData.description         | string                       | Any description about the user.                                                                                                                                                                                                                                                                                                       |
@@ -83,6 +80,7 @@ Response
 | UserData.TenantAndRole       | list of TenantAndRole object | Specify Tenant And Role for the user.                                                                                                                                                                                                                                                                                                 |
 |                              |                              | ▪ tenantId (string) - the tenant that the user can access.                                                                                                                                                                                                                                                                            |
 |                              |                              | ▪ isAdmin(bool) - decide whether to allocate the tenant administrator role to the user. If it is false, you need to specify a domain for the user to access.                                                                                                                                                                          |
+|                              |                              | ▪ domains (list of Domain object) - the domain that the user can access. It includes id(string) - domain ID; roles(list) - Domain Roles. Note: Domain role is only available after apply the latest patch.                                                                                                                                                                                                                                                                               |
 |                              |                              | ▪ canAddDomain(bool) - decide whether to allow the user to create domains.                                                                                                                                                                                                                                                            |
 | users                        | list of object               | The list contains the dupilcate account information in different server.                                                                                                                                                                                                                                                              |
 | users.authenticationServer   | string                       | The name of authentication server.                                                                                                                                                                                                                                                                                                    |
@@ -106,7 +104,29 @@ isEmbeddedMapUser,
             "allowChangePassword": true,
             "isSystemAdmin": true,
             "isUserManager": true,
-            "isSystemManager": true
+            "isSystemManager": true,
+			"TenantAndRole": [ 
+                {
+                    "tenantId": "36eab26d-12da-f3f1-35ef-a01ca1881bb9",
+                    "isAdmin": true,
+                    "domains": [],
+                    "canAddDomain": true
+                },
+                {
+                    "tenantId": "ecbfce16-328c-bf09-dffd-b59051e91d16",
+                    "isAdmin": true,
+                    "domains": [
+                        {
+                            "id": "19330f49-0987-4aab-b530-9e92344222ab",
+                            "roles": [
+                                "Domain Admin",
+                                "Domain User"
+                            ]
+                        }
+                    ],
+                    "canAddDomain": true
+                }
+            ]
         },
     "statusCode": 790200,
     "statusDescription": "Success."
