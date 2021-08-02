@@ -141,7 +141,7 @@ device_filter = {
     "dns":"" #"US-WDC-S2.Vlan200"
 }
 
-def getOneIpTable(token, nb_url, device_filter, pagination, beginIndex, count):
+def getOneIpTable(token, nb_url, device_filter, beginIndex, count):
     full_url = nb_url + "/ServicesAPI/API/V1/CMDB/Topology/OneIPTable"
 
     headers = {
