@@ -73,7 +73,7 @@ If user set "IP = null" or " IP = "" " but provide the input values of "beginInd
 |OneIPList.interfaceName| string | Device Interface Name of the IP  |
 |OneIPList.switchName| string | Switch Name that the IP connected to.  |
 |OneIPList.portName| string | Switch Port Name that the IP connected to  |
-|OneIPList.alias| string | device interface is HSRP/GLBP/VRRP |
+|OneIPList.alias| string | If IP is HSRP/VRRP/GLBP, the alias is set to the specific protocol name.<br>If IP is normal IP, the alias is set to the switchPort description. |
 |OneIPList.dns| string | DNS of the IP  |
 |OneIPList.sourceDevice| string | from which device this One IP come  |
 |OneIPList.serverType| int | device type |
@@ -141,7 +141,7 @@ device_filter = {
     "dns":"" #"US-WDC-S2.Vlan200"
 }
 
-def getOneIpTable(token, nb_url, device_filter, pagination, beginIndex, count):
+def getOneIpTable(token, nb_url, device_filter, beginIndex, count):
     full_url = nb_url + "/ServicesAPI/API/V1/CMDB/Topology/OneIPTable"
 
     headers = {
